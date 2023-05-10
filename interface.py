@@ -14,7 +14,7 @@ window.configure(bg='black')
 window.title("Necrotic Dominion v0.12")
 window.geometry("800x600")
 window.resizable(False, False)
-window.iconbitmap("ic.ico")
+window.iconbitmap("./media/ic.ico")
 
 
 def show_text(text):
@@ -108,7 +108,7 @@ def image_wand(ID):
     image_label.place(x=0, y=32, width=512, height=512)
 
 def new_play():
-    image_wand("start_screen")
+    image_wand("./media/start_screen")
     show_text("                                   " +
               "---------------------------------  " +
               "----------- Necrotic ------------  " +

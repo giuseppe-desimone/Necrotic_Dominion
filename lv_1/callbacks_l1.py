@@ -16,41 +16,41 @@ v25 = False
 
 def go_03():
     """Muove il giocatore nella stanza 0,3."""
-    i.image_wand("./lv_1/img/03")
+    i.image_wand("./media/img_lv1/03")
     i.show_text(map_l1.s03.description)
     i.create_buttons(a.s03_actions(), i.button_frame)
 
 
 def go_04():
     """Muove il giocatore nella stanza 0,4."""
-    i.image_wand("./lv_1/img/04")
+    i.image_wand("./media/img_lv1/04")
     i.show_text(map_l1.s04.description)
     i.create_buttons(a.s04_actions(), i.button_frame)
 
 
 def go_05():
     """Muove il giocatore nella stanza 0,5."""
-    i.image_wand("./lv_1/img/05")
+    i.image_wand("./media/img_lv1/05")
     i.show_text(map_l1.s05.description)
     i.create_buttons(a.s05_actions(), i.button_frame)
 
 def go_06():
     """Muove il giocatore nella stanza 0,6."""
-    i.image_wand("./lv_1/img/06")
+    i.image_wand("./media/img_lv1/06")
     i.show_text(map_l1.s06.description)
     i.create_buttons(a.s06_actions(), i.button_frame)
 
 
 def go_14():
     """Muove il giocatore nella stanza 1,4."""
-    i.image_wand("./lv_1/img/14")
+    i.image_wand("./media/img_lv1/14")
     i.show_text(map_l1.s14.description)
     i.create_buttons(a.s14_actions(), i.button_frame)
 
 
 def go_24():
     """Muove il giocatore nella stanza 2,4."""
-    i.image_wand("./lv_1/img/24")
+    i.image_wand("./media/img_lv1/24")
     i.show_text(map_l1.s24.description)
     i.create_buttons(a.s24_actions(), i.button_frame)
 
