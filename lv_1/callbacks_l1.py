@@ -59,16 +59,20 @@ def go_25():
     """Muove il giocatore nella stanza 2,5."""
     if v25 is True:
         if pg.oldguard.PV > 0:
+            i.image_wand("./media/img_lv1/25r")
             i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\nLa guardia se ne sta a terra, su quello che sembra un letto fatto di paglia, e sembra dormire.")
             i.create_buttons(a.s25_actions(), i.button_frame)
         else:
+            i.image_wand("./media/img_lv1/25r")
             i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nla guardia giace a terra, in una pozza di sangue.")
             i.create_buttons(a.s25_actions(), i.button_frame)
     else:
+        i.image_wand("./media/img_lv1/25")
         if pg.oldguard.PV > 0:
             i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nC'è una vecchia guardia poggiata al tavolo, si gira e ti osserva con occhi spalancati.")
             i.create_buttons(a.s25_actions(), i.button_frame)
         else:
+            i.image_wand("./media/img_lv1/25r")
             i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nla guardia giace a terra, in una pozza di sangue. Sembra che abbia con se degli oggetti.")
             i.create_buttons(a.s25_actions(), i.button_frame)
 
@@ -121,6 +125,7 @@ def pick_up_key2():
     """Raccoglie la chiave2."""
     global v25
     v25 = True
+    i.image_wand("./media/img_lv1/25r")
     pg.PG.inventory.append("chiave2")
     if pg.oldguard.PV <= 0:
         i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\nHai raccolto la chiave dal cadavere a terra.")
