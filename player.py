@@ -2,7 +2,6 @@
 
 from lv_1 import callbacks_l1 as c
 
-
 class Player:
     def __init__(self, PV, PF, PM, g, inventory=None):
         self.PV = PV
@@ -13,45 +12,66 @@ class Player:
             inventory = []
         self.inventory = inventory
 
+class Warrior(Player):
+    def __init__(self, PV=0, PF=0, PM=0, g=0, inventory=None):
+        super().__init__(PV,PF,PM,g)
+        self.PV += 20
+        self.PF += 3
+        self.PM += 0
+        self.g += 0
+        global PG
+        PG = self
 
-PG = Player(PV=0, PF=0, PM=0, g=0, inventory=[])
-oldguard = Player(PV=0, PF=0, PM=0, g=0, inventory=[])
+class Mage(Player):
+    def __init__(self, PV=0, PF=0, PM=0, g=0, inventory=None):
+        super().__init__(PV,PF,PM,g)
+        self.PV += 15
+        self.PF += 1
+        self.PM += 4
+        self.g += 0
+        global PG
+        PG = self
+
+class Oldguard(Player):
+    def __init__(self, PV=0, PF=0, PM=0, g=0, inventory=None):
+        super().__init__(PV,PF,PM,g)
+        self.PV += 17
+        self.PF += 5
+        self.PM += 0
+        self.g += 4
+
+    def loot(self):
+        return self.g
 
 
-def warrior():
-    new_player(2)
-    c.go_04()
+class IMP(Player):
+    def __init__(self, PV=0, PF=0, PM=0, g=0, inventory=None):
+        super().__init__(PV,PF,PM,g)
+        self.PV += 10
+        self.PF += 3
+        self.PM += 0
+        self.g += 0
 
-
-def mage():
-    new_player(1)
-    c.go_04()
-
-
-def new_player(typo):
-
-    if typo == 2:
-        PG.g = 0
-        PG.PV = 20
-        PG.PF = 3
-        PG.PM = 0
-        PG.inventory = []
-    else:
-        PG.g = 0
-        PG.PV = 15
-        PG.PF = 1
-        PG.PM = 4
-        PG.inventory = []
-
-    oldguard.g = 0
-    oldguard.PV = 17
-    oldguard.PF = 4
-    oldguard.PM = 0
-    oldguard.inventory = []
+    def loot(self):
+        return self.g
 
 
 def edit_stats(t, bonus):
     if t == 'M':
-        PG.PM = PG.PM + bonus
+        PG.PM += bonus
     if t == 'F':
-        PG.PF = PG.PF + bonus
+        PG.PF += bonus
+
+PG = Player(PV=0, PF=0, PM=0, g=0, inventory=[])
+l1_oldguard = Oldguard(PV=0, PF=0, PM=0, g=0, inventory=[])
+l1_imp = IMP(PV=0, PF=0, PM=0, g=0, inventory=[])
+
+
+def warrior():
+    Warrior()
+    c.go_04()
+
+def mage():
+    Mage()
+    c.go_04()
+
