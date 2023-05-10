@@ -28,9 +28,9 @@ def mage():
     c.go_04()
 
 
-def new_player(type):
+def new_player(typo):
 
-    if type == 2:
+    if typo == 2:
         PG.g = 0
         PG.PV = 20
         PG.PF = 3

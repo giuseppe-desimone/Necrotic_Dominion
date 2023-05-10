@@ -11,6 +11,7 @@ def s25_dialog_0():
     ]
     return actions
 
+
 def s25_dialog_1():
     """Restituisce le azioni possibili nella stanza 2,5."""
     actions = [
@@ -18,6 +19,7 @@ def s25_dialog_1():
         {"text": "'Come esco da qui?'", "callback": c.dialog_25_2}
     ]
     return actions
+
 
 def s25_dialog_2():
     """Restituisce le azioni possibili nella stanza 2,5."""

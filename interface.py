@@ -7,6 +7,8 @@ import os
 
 import player as pg
 
+global tk_image
+
 
 # creazione della finestra di gioco
 window = tk.Tk()
@@ -46,7 +48,8 @@ def show_text(text):
     text_box_over_image.insert(tk.END, "|| ")
     inventory_str = '|'.join(str(item) for item in pg.PG.inventory)
     text_box_over_image.insert(tk.END, "Inventario: {}".format(inventory_str))
-    text_box_over_image.insert(tk.END, "\n---------------------------------------------------------------------------------------------------")
+    text_box_over_image.insert(tk.END, "\n----------------------------------------------------------------------------"
+                                       "-----------------------")
     text_box_over_image.config(state=tk.DISABLED)
 
     # Update the textbox on the right
@@ -62,14 +65,16 @@ def show_text(text):
 
     text_box_bottom.config(state=tk.NORMAL)
     text_box_bottom.delete("1.0", tk.END)
-    text_box_bottom.insert(tk.END, "----------------------------------------------------------------------------------------------------")
+    text_box_bottom.insert(tk.END, "-----------------------------------------------------------------------------------"
+                                   "-----------------")
     text_box_bottom.config(state=tk.DISABLED)
 
 
 def create_buttons(actions, frame):
     clear_buttons(frame)
     for action in actions:
-        button = tk.Button(frame, text=action["text"], command=action["callback"], bg='black', fg='white', bd=10, highlightthickness=0, activebackground='grey')
+        button = tk.Button(frame, text=action["text"], command=action["callback"], bg='black', fg='white', bd=10,
+                           highlightthickness=0, activebackground='grey')
         button.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
 
@@ -79,17 +84,21 @@ def clear_buttons(frame):
 
 
 # Create the textbox over the image
-text_box_over_image = tk.Text(window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0, highlightbackground='black', borderwidth=0)
+text_box_over_image = tk.Text(window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0,
+                              highlightbackground='black', borderwidth=0)
 text_box_over_image.place(x=0, y=0, width=800, height=30)
 
 # Create the textbox on the right
-text_box_right = tk.Text(window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0, highlightbackground='black', borderwidth=0)
+text_box_right = tk.Text(window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0,
+                         highlightbackground='black', borderwidth=0)
 text_box_right.place(x=525, y=30, width=275, height=512)
 
-text_box_bottom = tk.Text(window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0, highlightbackground='black', borderwidth=0)
+text_box_bottom = tk.Text(window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0,
+                          highlightbackground='black', borderwidth=0)
 text_box_bottom.place(x=0, y=541, width=800, height=30)
 
-text_box_vertical = tk.Text(window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0, highlightbackground='black', borderwidth=0)
+text_box_vertical = tk.Text(window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0,
+                            highlightbackground='black', borderwidth=0)
 text_box_vertical.place(x=512, y=30, width=13, height=515)
 
 # creazione del frame per i bottoni
@@ -97,15 +106,16 @@ button_frame = tk.Frame(window)
 button_frame.pack(side="bottom", fill=tk.X)
 
 
-def image_wand(ID):
+def image_wand(token):
     # Create the image label
-    image_path = os.path.join(os.getcwd(), ID + ".png")
+    image_path = os.path.join(os.getcwd(), token + ".png")
     image = Image.open(image_path)
     resized_image = image.resize((512, 512), Image.NEAREST)  # Resize the image without antialiasing
     global tk_image  # Declare tk_image as a global variable
     tk_image = ImageTk.PhotoImage(resized_image)
     image_label = tk.Label(window, image=tk_image)
     image_label.place(x=0, y=32, width=512, height=512)
+
 
 def new_play():
     image_wand("./media/start_screen")
@@ -147,3 +157,4 @@ def class_actions():
 
 def end_game():
     window.destroy()
+

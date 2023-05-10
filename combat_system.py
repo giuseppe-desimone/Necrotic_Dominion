@@ -7,6 +7,8 @@ import random
 
 perry = False
 
+global p, e
+
 
 def combat(pgplayer, pgenemy, previous_room, current_room):
     global p, e
@@ -47,6 +49,7 @@ def combat_actions(previous_room, current_room):
             ]
     return actions
 
+
 def invoke_missile(previous_room, current_room):
     p.PM -= 1
     damage = roll_dice(1, 6) + 7
@@ -54,9 +57,11 @@ def invoke_missile(previous_room, current_room):
 
     room_description = get_room_description(current_room)
     i.show_text(
-        room_description + "\n\n---------------------------------\n\nVita del nemico: {} \n\n---------------------------------".format(e.PV)
+        room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
+                           "\n\n---------------------------------".format(e.PV)
                          + f"\n\nLa tua energia travolge l'avversario, arrecandogli {damage} danni")
     combat(p, e, previous_room, current_room)
+
 
 def para(previous_room, current_room):
     global perry
@@ -69,10 +74,12 @@ def para(previous_room, current_room):
         damage = roll_dice(1, 6) + e.PF  # add enemy's attack bonus
         p.PV -= damage
         i.show_text(
-            room_description + "\n\n---------------------------------\n\nVita del nemico: {} \n\n---------------------------------".format(e.PV)
+            room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
+                               "\n\n---------------------------------".format(e.PV)
                              + f"\n\nHai tentato di parare, ma hai subito {damage} danni")
     else:
-        i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} \n\n---------------------------------".format(e.PV)
+        i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
+                                       "\n\n---------------------------------".format(e.PV)
                                      + "\n\nHai Parato!")
 
     combat(p, e, previous_room, current_room)
@@ -88,16 +95,20 @@ def attacca(previous_room, current_room):
         damage_p = roll + p.PF
         p.PV -= damage_e
         e.PV -= damage_p
-        i.show_text(room_description+ "\n\n---------------------------------\n\nVita del nemico: {} \n\n---------------------------------------------------------------------------------------------------".format(e.PV)
+        i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
+                                       "\n\n-------------------------------------------------"
+                                       "--------------------------------------------------".format(e.PV)
                     + f"\n\nVieni Attaccato, hai subito {damage_e} danni"
                     + "\n\n---------------------------------"
                     + f"\n\nColpo Sferrato, hai tolto {damage_p} danni")
         combat(p, e, previous_room, current_room)
     else:
-        roll = roll_dice(1, 6) # roll a 6-sided dice
-        damage = roll + p.PF # add enemy's attack bonus
+        roll = roll_dice(1, 6)  # roll a 6-sided dice
+        damage = roll + p.PF  # add enemy's attack bonus
         e.PV -= damage
-        i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} \n\n---------------------------------------------------------------------------------------------------".format(e.PV)
+        i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
+                                       "\n\n----------------------------------------------------"
+                                       "-----------------------------------------------".format(e.PV)
                     + f"\n\nColpo Sferrato, hai tolto {damage} danni")
         perry = False
         combat(p, e, previous_room, current_room)

@@ -1,5 +1,6 @@
 """v0.12"""
 
+
 class Stanza:
     def __init__(self, X, Y, description, objects=None):
         self.X = X
@@ -8,6 +9,7 @@ class Stanza:
         if objects is None:
             objects = []
         self.objects = objects
+
 
 # Creazione della matrice "mappa"
 mappa_l1 = [[Stanza(X=i, Y=j, description="descrizione", objects=[]) for j in range(9)] for i in range(9)]

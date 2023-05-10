@@ -51,6 +51,7 @@ def s05_actions():
         ]
     return actions
 
+
 def s06_actions():
     if c.v06 is True:
         actions = [
@@ -63,6 +64,7 @@ def s06_actions():
         ]
 
     return actions
+
 
 def s14_actions():
     """Restituisce le azioni possibili nella stanza 1,4."""
