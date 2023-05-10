@@ -38,16 +38,16 @@ mappa_l1[0][4].objects = ["chiave"]
 
 ########################################################################################################################
 
-s02 = mappa_l1[0][2]
-s03 = mappa_l1[0][3]
-s04 = mappa_l1[0][4]
-s05 = mappa_l1[0][5]
-s06 = mappa_l1[0][6]
+s02 = mappa_l1[0][2] 
+s03 = mappa_l1[0][3] # armeria
+s04 = mappa_l1[0][4] # atrio
+s05 = mappa_l1[0][5] # stanza vuota
+s06 = mappa_l1[0][6] # fontana
 s12 = mappa_l1[1][2]
-s14 = mappa_l1[1][4]
+s14 = mappa_l1[1][4] # corridoio
 s22 = mappa_l1[2][2]
-s24 = mappa_l1[2][4]
-s25 = mappa_l1[2][5]
+s24 = mappa_l1[2][4] # fine corridoio
+s25 = mappa_l1[2][5] # rifugio guardia
 s32 = mappa_l1[3][2]
 s33 = mappa_l1[3][3]
 s34 = mappa_l1[3][4]

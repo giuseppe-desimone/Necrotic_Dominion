@@ -36,6 +36,15 @@ def s04_actions():
         ]
     return actions
 
+# def s04_actions():
+#     actions = []
+#     actions.push({"text": "Andare a est", "callback": c.go_05})
+#     actions.push({"text": "Andare ad ovest", "callback": c.go_03})
+#     actions.push({"text": "Vai a sud in quello che sembra un corridoio buio", "callback": c.go_14})
+#     if not pg.PG.inventory.get("chiave") : actions.push({"text": "Raccogliere la chiave", "callback": c.pick_up_key}) 
+#     if not pg.PG.inventory.get("spada") : actions.push({"text": "Raccogliere la chiave", "callback": c.pick_up_key}) 
+
+#     return actions
 
 def s05_actions():
     """Restituisce le azioni possibili nella stanza 0,5."""
@@ -53,15 +62,19 @@ def s05_actions():
 
 
 def s06_actions():
-    if c.v06 is True:
-        actions = [
-            {"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05}
-        ]
+    if pg.l1_imp.PV > 0:
+            actions = [
+                    {"text": "Attacca l'imp", "callback": c.combat_06},
+                    # {"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05}
+                ]
     else:
-        actions = [
-            {"text": "Abbeverati alla fontana", "callback": c.drink_06},
-            {"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05}
-        ]
+        actions = []
+        actions.append({"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05})
+        
+        if c.v06a is False:
+                actions.append({"text": "Cerca tra i resti dell'imp", "callback": c.pick_up_key3})
+        if c.v06 is False:
+                actions.append({"text": "Abbeverati alla fontana", "callback": c.drink_06})
 
     return actions
 
@@ -88,7 +101,7 @@ def s24_actions():
 def s25_actions():
     """Restituisce le azioni possibili nella stanza 2,5."""
     if c.v25 is True:
-        if pg.oldguard.PV > 0:
+        if pg.l1_oldguard.PV > 0:
             actions = [
                 {"text": "Torna indietro nel corridoio", "callback": c.go_24},
                 {"text": "Uccidi la guardia nel sonno", "callback": c.dialog_25_kill},
@@ -98,7 +111,7 @@ def s25_actions():
                 {"text": "Torna indietro nel corridoio", "callback": c.go_24},
             ]
     else:
-        if pg.oldguard.PV > 0:
+        if pg.l1_oldguard.PV > 0:
             actions = [
                 {"text": "Torna indietro nel corridoio", "callback": c.go_24},
                 {"text": "Parla con la guardia", "callback": c.dialog_25_start},

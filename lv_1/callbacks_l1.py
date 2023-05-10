@@ -1,15 +1,16 @@
 """v0.12"""
 
 import interface as i
-import combat_system as cs
+from interactions import combat_system as cs
 from lv_1 import map_l1
 from lv_1 import actions_l1 as a
 from lv_1 import dialogs_l1 as d
 import player as pg
 
-v05 = False
-v06 = False
-v25 = False
+v05 = False # porta stanza chiusa/apertta
+v06 = False # bevutto alla fontana
+v06a = False # raccolta chiave imp
+v25 = False # chiave guardia
 
 ############################################MOVIMENTI###################################################################
 
@@ -37,8 +38,12 @@ def go_05():
 def go_06():
     """Muove il giocatore nella stanza 0,6."""
     i.image_wand("./media/img_lv1/06")
-    i.show_text(map_l1.s06.description)
-    i.create_buttons(a.s06_actions(), i.button_frame)
+    if pg.l1_imp.PV > 0:
+        i.show_text(map_l1.s06.description+ "\n\n---------------------------------\n\nMentre osservi la fontana con occhi curiosi, un'entità malvagia e ripugnante si innalza in volo.\nDai suoi occhi percepisci una volontà mortale.")
+        i.create_buttons(a.s06_actions(), i.button_frame)
+    else: 
+        i.show_text(map_l1.s06.description+ "\n\n---------------------------------\n\nUna massa nera, puttrescente e informe giace dov'era un tempo l'imp.")
+        i.create_buttons(a.s06_actions(), i.button_frame)
 
 
 def go_14():
@@ -58,7 +63,7 @@ def go_24():
 def go_25():
     """Muove il giocatore nella stanza 2,5."""
     if v25 is True:
-        if pg.oldguard.PV > 0:
+        if pg.l1_oldguard.PV > 0:
             i.image_wand("./media/img_lv1/25r")
             i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\nLa guardia se ne sta a terra, su quello che sembra un letto fatto di paglia, e sembra dormire.")
             i.create_buttons(a.s25_actions(), i.button_frame)
@@ -68,7 +73,7 @@ def go_25():
             i.create_buttons(a.s25_actions(), i.button_frame)
     else:
         i.image_wand("./media/img_lv1/25")
-        if pg.oldguard.PV > 0:
+        if pg.l1_oldguard.PV > 0:
             i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nC'è una vecchia guardia poggiata al tavolo, si gira e ti osserva con occhi spalancati.")
             i.create_buttons(a.s25_actions(), i.button_frame)
         else:
@@ -127,12 +132,45 @@ def pick_up_key2():
     v25 = True
     i.image_wand("./media/img_lv1/25r")
     pg.PG.inventory.append("chiave2")
-    if pg.oldguard.PV <= 0:
+    if pg.l1_oldguard.PV <= 0:
         i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\nHai raccolto la chiave dal cadavere a terra.")
     else:
         i.show_text(
             map_l1.s25.description + "\n\n---------------------------------\n\nHai raccolto la chiave.\n\n---------------------------------\n\nLa guardia si sdraia a terra, su quello che sembra un letto fatto di paglia, \ne cerca di addormentarsi.")
     i.create_buttons(a.s25_actions(), i.button_frame)
+
+
+def pick_up_key3():
+    """Raccoglie la chiave3."""
+    global v06a
+    v06a = True
+    i.image_wand("./media/img_lv1/06")
+    pg.PG.inventory.append("chiave3")
+    i.show_text(map_l1.s06.description + "\n\n---------------------------------\n\nHai raccolto la chiave dell'imp")
+    i.create_buttons(a.s06_actions(), i.button_frame)
+
+
+############################################COMBATTIMENTI####################################################################
+
+
+
+def combat_06():
+    """Combattere imp in 06"""
+    i.show_text(map_l1.s06.description + "\n\n---------------------------------"
+                                       + "\n\nVita del nemico: {} ".format(pg.l1_imp.PV)
+                                       + "\n\n---------------------------------"              
+                                         "\n\nL'Imp si avventa con voracità famelica in cerca della tua vita")
+    cs.combat(pg.PG, pg.l1_imp,5,6)
+
+
+def dialog_25_combat():
+    """Parlare con guardia in 25"""
+    i.show_text(map_l1.s25.description + "\n\n---------------------------------"
+                                       + "\n\nVita del nemico: {} ".format(pg.l1_oldguard.PV)
+                                       + "\n\n---------------------------------"              
+                                         "\n\n'QUESTO NON E' UN POSTO PER GIROVAGARE' \n\nil vecchio si alza e agita un bastone verso di te.")
+    cs.combat(pg.PG, pg.l1_oldguard, 24, 25)
+
 
 
 ############################################DIALOGHI####################################################################
@@ -158,15 +196,6 @@ def dialog_25_2():
 
 def dialog_25_kill():
     """Parlare con guardia in 25"""
-    pg.oldguard.PV = 0
+    pg.l1_oldguard.PV = 0
     i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nLa vecchia guardia ti scruta con occhi di incredula gratitudine.\n\n'Grazie', esala dalla bocca.")
     i.create_buttons(a.s25_actions(), i.button_frame)
-
-
-def dialog_25_combat():
-    """Parlare con guardia in 25"""
-    i.show_text(map_l1.s25.description + "\n\n---------------------------------"
-                                       + "\n\nVita del nemico: {} ".format(pg.oldguard.PV)
-                                       + "\n\n---------------------------------"              
-                                         "\n\n'QUESTO NON E' UN POSTO PER GIROVAGARE' \n\nil vecchio si alza e agita un bastone verso di te.")
-    cs.combat(pg.PG, pg.oldguard, 24, 25)
