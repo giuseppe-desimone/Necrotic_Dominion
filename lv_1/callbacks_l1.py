@@ -1,3 +1,5 @@
+"""v0.12"""
+
 import interface as i
 import combat_system as cs
 from lv_1 import map_l1
@@ -41,7 +43,7 @@ def go_06():
 
 def go_14():
     """Muove il giocatore nella stanza 1,4."""
-    i.image_wand("corridor")
+    i.image_wand("./lv_1/img/14")
     i.show_text(map_l1.s14.description)
     i.create_buttons(a.s14_actions(), i.button_frame)
 

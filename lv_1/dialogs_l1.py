@@ -1,5 +1,7 @@
+"""v0.12"""
+
 from lv_1 import callbacks_l1 as c
-from lv_1 import actions_l1 as a
+
 
 def s25_dialog_0():
     """Restituisce le azioni possibili nella stanza 2,5."""

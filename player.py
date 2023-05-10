@@ -1,4 +1,8 @@
+"""v0.12"""
+
 from lv_1 import callbacks_l1 as c
+
+
 class Player:
     def __init__(self, PV, PF, PM, g, inventory=None):
         self.PV = PV
@@ -17,6 +21,7 @@ oldguard = Player(PV=0, PF=0, PM=0, g=0, inventory=[])
 def warrior():
     new_player(2)
     c.go_04()
+
 
 def mage():
     new_player(1)
@@ -43,6 +48,7 @@ def new_player(type):
     oldguard.PF = 4
     oldguard.PM = 0
     oldguard.inventory = []
+
 
 def edit_stats(t, bonus):
     if t == 'M':

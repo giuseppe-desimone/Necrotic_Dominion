@@ -1,3 +1,4 @@
+"""v0.12"""
 
 class Stanza:
     def __init__(self, X, Y, description, objects=None):

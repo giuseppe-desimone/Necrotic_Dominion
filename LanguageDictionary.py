@@ -1,3 +1,5 @@
+"""v0.12"""
+
 translations = {
     "english": {
         "interface_life": "Life",

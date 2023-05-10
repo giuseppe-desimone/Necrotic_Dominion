@@ -1,7 +1,7 @@
+"""v0.12"""
+
 import interface
 import pygame
-
-# Andrea
 
 pygame.init()
 pygame.mixer.music.load('soundtrack.ogg')

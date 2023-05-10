@@ -1,3 +1,5 @@
+"""v0.12"""
+
 import tkinter as tk
 from PIL import Image, ImageTk
 
@@ -107,10 +109,17 @@ def image_wand(ID):
 
 def new_play():
     image_wand("start_screen")
-    show_text("----------- Necrotic ------------ " +
-              "---------   (v0. 12)    --------- " +
-              "----------- Dominion ------------ " +
-              "--------------------------------- ")
+    show_text("                                   " +
+              "---------------------------------  " +
+              "----------- Necrotic ------------  " +
+              "---------               ---------  " +
+              "----------- Dominion ------------  " +
+              "---------------------------------  " +
+              "                                   " +
+              "                                   " +
+              "                                   " +
+              "           |  v0.12  |             " +
+              "                                   ")
     create_buttons(start_game_actions(), button_frame)
     window.mainloop()
 
