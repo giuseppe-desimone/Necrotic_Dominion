@@ -1,22 +1,23 @@
 """v0.12"""
 
 translations = {
-    "english": {
-        "interface_life": "Life",
-        "interface_strenght": "Strenght",
-        "interface_mana": "Mana",
-        "interface_gold": "Gold",
-    },
-    "italian": {
-        "interface_life": "Vita",
-        "interface_strenght": "Forza",
-        "interface_mana": "Mana",
-        "interface_gold": "Oro",
+        "interface_life":       { "en": "Life",                 "it":"Vita" },
+        "interface_strenght":   { "en": "Strenght",             "it":"Forza" },
+        "interface_mana":       { "en": "Mana",                 "it":"Mana" },
+        "interface_gold":       { "en": "Gold",                 "it":"Oro" },
+        "pg_invetory":          { "en": "Inventory",            "it":"Inventario" },
+
+        "class_selection" :     {"en":"Class Selection",        "it":"Selezione della classe"},
+        "quit_game" :           {"en":"Quit",                   "it":"Chiudi il gioco"},
+
+        "warrior" :             {"en":"Skilled in combat",      "it":"Abile nel combattimento"},
+        "mage" :                {"en":"Skilled in arcane arts", "it":"Abile nelle arti arcane"},
+
     }
-}
+
 
 """
-selected_language = "italian"
-str = translations[selected_language]["interface_strenght"]
+selected_language = "it"
+str = translations["interface_strenght"][selected_language]
 print(str)  # output: "Forza"
 """

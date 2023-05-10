@@ -7,6 +7,8 @@ import os
 
 import player as pg
 
+from language_dictionary import *
+
 global tk_image
 
 
@@ -16,8 +18,9 @@ window.configure(bg='black')
 window.title("Necrotic Dominion v0.12")
 window.geometry("800x600")
 window.resizable(False, False)
-window.iconbitmap("./media/ic.ico")
+# window.iconbitmap("./media/ic.ico")
 
+lang = "en"
 
 def show_text(text):
     """Visualizza il testo nella finestra di gioco."""
@@ -33,21 +36,21 @@ def show_text(text):
     text_box_over_image.delete("1.0", tk.END)
 
     # Use tags to set colors for the placeholders
-    text_box_over_image.tag_config("vita", foreground=vita_color)
-    text_box_over_image.tag_config("forza", foreground=forza_color)
-    text_box_over_image.tag_config("mana", foreground=mana_color)
-    text_box_over_image.tag_config("oro", foreground=oro_color)
+    text_box_over_image.tag_config(translations["interface_life"][lang], foreground=vita_color)
+    text_box_over_image.tag_config(translations["interface_strenght"][lang], foreground=forza_color)
+    text_box_over_image.tag_config(translations["interface_mana"][lang], foreground=mana_color)
+    text_box_over_image.tag_config(translations["interface_gold"][lang], foreground=oro_color)
 
-    text_box_over_image.insert(tk.END, "Vita: {} ".format(pg.PG.PV), "vita")
+    text_box_over_image.insert(tk.END, translations["interface_life"][lang]+": {} ".format(pg.PG.PV), translations["interface_life"][lang])
     text_box_over_image.insert(tk.END, "| ")
-    text_box_over_image.insert(tk.END, "Forza: {} ".format(pg.PG.PF), "forza")
+    text_box_over_image.insert(tk.END, translations["interface_strenght"][lang]+": {} ".format(pg.PG.PF), translations["interface_strenght"][lang])
     text_box_over_image.insert(tk.END, "| ")
-    text_box_over_image.insert(tk.END, "Mana: {} ".format(pg.PG.PM), "mana")
+    text_box_over_image.insert(tk.END, translations["interface_mana"][lang]+": {} ".format(pg.PG.PM), translations["interface_mana"][lang])
     text_box_over_image.insert(tk.END, "| ")
-    text_box_over_image.insert(tk.END, "Oro: {} ".format(pg.PG.g), "oro")
+    text_box_over_image.insert(tk.END, translations["interface_gold"][lang]+": {} ".format(pg.PG.g), translations["interface_gold"][lang])
     text_box_over_image.insert(tk.END, "|| ")
     inventory_str = '|'.join(str(item) for item in pg.PG.inventory)
-    text_box_over_image.insert(tk.END, "Inventario: {}".format(inventory_str))
+    text_box_over_image.insert(tk.END, translations["pg_invetory"][lang]+": {} ".format(inventory_str))
     text_box_over_image.insert(tk.END, "\n----------------------------------------------------------------------------"
                                        "-----------------------")
     text_box_over_image.config(state=tk.DISABLED)
@@ -105,7 +108,6 @@ text_box_vertical.place(x=512, y=30, width=13, height=515)
 button_frame = tk.Frame(window)
 button_frame.pack(side="bottom", fill=tk.X)
 
-
 def image_wand(token):
     # Create the image label
     image_path = os.path.join(os.getcwd(), token + ".png")
@@ -115,46 +117,4 @@ def image_wand(token):
     tk_image = ImageTk.PhotoImage(resized_image)
     image_label = tk.Label(window, image=tk_image)
     image_label.place(x=0, y=32, width=512, height=512)
-
-
-def new_play():
-    image_wand("./media/start_screen")
-    show_text("                                   " +
-              "---------------------------------  " +
-              "----------- Necrotic ------------  " +
-              "---------               ---------  " +
-              "----------- Dominion ------------  " +
-              "---------------------------------  " +
-              "                                   " +
-              "                                   " +
-              "                                   " +
-              "           |  v0.12  |             " +
-              "                                   ")
-    create_buttons(start_game_actions(), button_frame)
-    window.mainloop()
-
-
-def start_game_actions():
-    """Restituisce le azioni possibili nella schermata di inizio gioco."""
-    actions = [
-        {"text": "Selezione della classe", "callback": class_caller},
-        {"text": "Chiudi il gioco", "callback": end_game}
-    ]
-    return actions
-
-
-def class_caller():
-    create_buttons(class_actions(), button_frame)
-
-
-def class_actions():
-    actions = [
-        {"text": "Abile nel combattimento", "callback": pg.warrior},
-        {"text": "Abile nelle arti arcane", "callback": pg.mage}
-    ]
-    return actions
-
-
-def end_game():
-    window.destroy()
 
