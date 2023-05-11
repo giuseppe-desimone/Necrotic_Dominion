@@ -88,8 +88,13 @@ def go_25():
 
 def go_34():
     """Muove il giocatore nella stanza 3,4."""
-    i.image_wand("./media/img_lv1/34")
-    i.show_text(map_l1.s34.description)
+    if pg.l1_undead.PV > 0:
+        i.image_wand("./media/img_lv1/34")
+        i.show_text(map_l1.s34.description +"\n\n---------------------------------\n\nNon morto bruttto")
+    else:
+        i.image_wand("./media/img_lv1/34r")
+        i.show_text(map_l1.s34.description +"\n\n---------------------------------\n\nNon morto ma morto")
+    
     i.create_buttons(a.s34_actions())
 
 
@@ -197,7 +202,7 @@ def combat_34():
     i.show_text(map_l1.s34.description + "\n\n---------------------------------"
                                        + "\n\nVita del nemico: {} ".format(pg.l1_imp.PV)
                                        + "\n\n---------------------------------"              
-                                         "\n\nIl non morto ti attacca in cerca della tua vita")
+                                         "\n\nIl non morto ti attacca per scopartti nel culo")
     cs.combat(pg.PG, pg.l1_undead, 24, 34)
 
 ############################################DIALOGHI####################################################################

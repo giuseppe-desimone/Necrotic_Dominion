@@ -50,4 +50,4 @@ def warrior():
 
 def mage():
     pg.Mage()
-    c.go_04()
+    c.go_34()
