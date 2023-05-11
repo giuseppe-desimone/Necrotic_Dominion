@@ -15,6 +15,9 @@ translations = {# add arcane lang??
 
     }
 
+objects_translations = {
+    "key0" : {"it":"Chiave arruginita", "en":"rusty key"}
+}
 
 """
 selected_language = "it"
