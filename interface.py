@@ -116,9 +116,10 @@ class InterfaceSingleton(metaclass=InterfaceMeta):
     def create_buttons(self, actions):
         self.clear_buttons()
         for action in actions:  
-            button = tk.Button(self.button_frame, text=action["text"], command=action["callback"], bg='black', fg='white', bd=10,
-                            highlightthickness=0, activebackground='grey')
-            button.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+            if action:
+                button = tk.Button(self.button_frame, text=action["text"], command=action["callback"], bg='black', fg='white', bd=10,
+                                highlightthickness=0, activebackground='grey')
+                button.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
     def clear_buttons(self):
         for widget in self.button_frame.winfo_children():
