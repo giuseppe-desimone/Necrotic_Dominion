@@ -1,6 +1,6 @@
 """v0.12"""
 
-translations = {
+translations = {# add arcane lang??
         "interface_life":       { "en": "Life",                 "it":"Vita" },
         "interface_strenght":   { "en": "Strenght",             "it":"Forza" },
         "interface_mana":       { "en": "Mana",                 "it":"Mana" },

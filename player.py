@@ -1,7 +1,5 @@
 """v0.12"""
 
-from lv_1 import callbacks_l1 as c
-
 class Player:
     def __init__(self, PV, PF, PM, g, inventory=None):
         self.PV = PV
@@ -66,12 +64,4 @@ PG = Player(PV=0, PF=0, PM=0, g=0, inventory=[])
 l1_oldguard = Oldguard(PV=0, PF=0, PM=0, g=0, inventory=[])
 l1_imp = IMP(PV=0, PF=0, PM=0, g=0, inventory=[])
 
-
-def warrior():
-    Warrior()
-    c.go_04()
-
-def mage():
-    Mage()
-    c.go_04()
 

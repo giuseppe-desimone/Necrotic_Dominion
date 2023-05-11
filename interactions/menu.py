@@ -1,9 +1,10 @@
 from interface import * 
 from language_dictionary import *
+from lv_1 import callbacks_l1 as c
 
 def new_play():
-    image_wand("./media/start_screen")
-    show_text("                                   " +
+    i.image_wand("./media/start_screen")
+    i.show_text("                                   " +
               "---------------------------------  " +
               "----------- Necrotic ------------  " +
               "---------               ---------  " +
@@ -14,31 +15,39 @@ def new_play():
               "                                   " +
               "           |  v0.12  |             " +
               "                                   ")
-    create_buttons(start_game_actions(), button_frame)
-    window.mainloop()
+    i.create_buttons(start_game_actions())
+    i.window.mainloop()
 
 
 def start_game_actions():
     """Restituisce le azioni possibili nella schermata di inizio gioco."""
     actions = [
-        {"text": translations["class_selection"][lang], "callback": class_caller},
-        {"text": translations["quit_game"][lang], "callback": end_game}
+        {"text": translations["class_selection"][i.lang], "callback": class_caller},
+        {"text": translations["quit_game"][i.lang], "callback": end_game}
     ]
     return actions
 
 
 def class_caller():
-    create_buttons(class_actions(), button_frame)
+    i.create_buttons(class_actions())
 
 
 def class_actions():
     actions = [
-        {"text": translations["warrior"][lang], "callback": pg.warrior},
-        {"text": translations["mage"][lang], "callback": pg.mage}
+        {"text": translations["warrior"][i.lang], "callback": warrior},
+        {"text": translations["mage"][i.lang], "callback": mage}
     ]
     return actions
 
 
 def end_game():
-    window.destroy()
+    i.window.destroy()
 
+
+def warrior():
+    pg.Warrior()
+    c.go_04()
+
+def mage():
+    pg.Mage()
+    c.go_04()

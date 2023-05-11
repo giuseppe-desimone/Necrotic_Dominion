@@ -21,10 +21,10 @@ def combat(pgplayer, pgenemy, previous_room, current_room):
         if e.PV <= 0:
             getattr(c, f"go_{current_room:02d}")()
         else:
-            i.create_buttons(combat_actions(previous_room, current_room), i.button_frame)
+            i.create_buttons(combat_actions(previous_room, current_room))
     else:
         i.show_text("\n\nSei morto. Game over.")
-        i.create_buttons(combat_actions(previous_room, current_room), i.button_frame)
+        i.create_buttons(combat_actions(previous_room, current_room))
 
 
 def combat_actions(previous_room, current_room):
