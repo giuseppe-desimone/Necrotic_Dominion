@@ -1,6 +1,6 @@
 """v0.12"""
 
-import interface as i
+from interface import *
 from lv_1 import callbacks_l1 as c
 from lv_1 import map_l1
 import random
