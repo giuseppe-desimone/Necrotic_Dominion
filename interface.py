@@ -3,7 +3,8 @@
 import os
 import sys
 
-sys.path.append(os.path.dirname(__file__))
+master_path = os.path.dirname(__file__)
+sys.path.append(master_path)
 
 import tkinter as tk
 from PIL import Image, ImageTk
@@ -127,7 +128,7 @@ class InterfaceSingleton(metaclass=InterfaceMeta):
 
     def image_wand(self, token):
         # Create the image label
-        image_path = os.path.join(os.getcwd(), token + ".png")
+        image_path = os.path.join(master_path, token + ".png")
         image = Image.open(image_path)
         resized_image = image.resize((512, 512), Image.NEAREST)  # Resize the image without antialiasing
         global tk_image  # Declare tk_image as a global variable

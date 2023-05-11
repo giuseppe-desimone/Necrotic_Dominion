@@ -1,5 +1,7 @@
 """v0.12"""
 
+from components import *
+
 class Player:
     def __init__(self, PV, PF, PM, g, inventory=None):
         self.PV = PV
@@ -10,8 +12,15 @@ class Player:
             inventory = []
         self.inventory = inventory
 
+        self.combat_actions = []
+
+        # self.combat_actions.push(
+        #     Action
+        # )
+
     def item_pickup(self, itemid):
         self.inventory.append(itemid)
+
 
 class Warrior(Player):
     def __init__(self, PV=0, PF=0, PM=0, g=0, inventory=None):
