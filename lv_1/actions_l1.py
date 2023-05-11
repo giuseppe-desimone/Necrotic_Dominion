@@ -147,8 +147,9 @@ def s34_actions():
             # {"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05}
         ]
     else:
-        actions = []
-        actions.append({"text": "Sali le scale", "callback": c.go_04})
-        actions.append({"text": "Torna indietro", "callback": c.go_24})
+        actions = [
+            {"text": "Sali le scale", "callback": c.go_04},
+            {"text": "Torna indietro", "callback": c.go_24}
+        ]
 
     return actions

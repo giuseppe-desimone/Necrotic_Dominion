@@ -200,10 +200,10 @@ def dialog_25_combat():
 def combat_34():
     """Combattere imp in 34"""
     i.show_text(map_l1.s34.description + "\n\n---------------------------------"
-                                       + "\n\nVita del nemico: {} ".format(pg.l1_imp.PV)
+                                       + "\n\nVita del nemico: {} ".format(pg.l1_undead.PV)
                                        + "\n\n---------------------------------"              
                                          "\n\nIl non morto ti attacca per scopartti nel culo")
-    cs.combat(pg.PG, pg.l1_undead, 24, 34)
+    cs.combat(pg.PG, pg.l1_undead,24,34)
 
 ############################################DIALOGHI####################################################################
 
