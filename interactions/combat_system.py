@@ -96,8 +96,7 @@ def attacca(previous_room, current_room):
         p.PV -= damage_e
         e.PV -= damage_p
         i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
-                                       "\n\n-------------------------------------------------"
-                                       "--------------------------------------------------".format(e.PV)
+                                       "\n\n---------------------------------".format(e.PV)
                     + f"\n\nVieni Attaccato, hai subito {damage_e} danni"
                     + "\n\n---------------------------------"
                     + f"\n\nColpo Sferrato, hai tolto {damage_p} danni")
@@ -107,8 +106,7 @@ def attacca(previous_room, current_room):
         damage = roll + p.PF  # add enemy's attack bonus
         e.PV -= damage
         i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
-                                       "\n\n----------------------------------------------------"
-                                       "-----------------------------------------------".format(e.PV)
+                                       "\n\n---------------------------------".format(e.PV)
                     + f"\n\nColpo Sferrato, hai tolto {damage} danni")
         perry = False
         combat(p, e, previous_room, current_room)

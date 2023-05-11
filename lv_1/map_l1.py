@@ -29,7 +29,7 @@ mappa_l1[2][4].description = "Hai raggiunto la fine del corrido-io, dove trovi d
 mappa_l1[2][5].description = "Entri in una stanza del castello \natipica. Sembra che sia stata \nriadattata a rifugio, con un \ngiaciglio per dormire, e un \nsemplice tavolo in legno. Una \ncandela accesa sul tavolo rompe \nil buio della stanza."
 mappa_l1[3][2].description
 mappa_l1[3][3].description
-mappa_l1[3][4].description
+mappa_l1[3][4].description = "Sei in una stanza fredda, con delle scale"
 mappa_l1[3][5].description
 
 ########################################################################################################################

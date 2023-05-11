@@ -90,11 +90,25 @@ def s14_actions():
 
 def s24_actions():
     """Restituisce le azioni possibili nella stanza 2,4."""
-    actions = [
-        {"text": "Percorri il corridoio verso nord", "callback": c.go_14},
-        {"text": "Aprire la porta a sud", "callback": c.open_door_nokey_24},
-        {"text": "Aprire la porta a est", "callback": c.go_25}
-    ]
+    if c.v06a is True:
+        if c.v24 is False:
+            actions = [
+                {"text": "Percorri il corridoio verso nord", "callback": c.go_14},
+                {"text": "Aprire la porta a sud", "callback": c.open_door_24},
+                {"text": "Aprire la porta a est", "callback": c.go_25}
+            ]
+        else:
+            actions = [
+                {"text": "Percorri il corridoio verso nord", "callback": c.go_14},
+                {"text": "Entra nella porta a sud", "callback": c.go_34},
+                {"text": "Aprire la porta a est", "callback": c.go_25}
+            ]
+    else:
+        actions = [
+            {"text": "Percorri il corridoio verso nord", "callback": c.go_14},
+            {"text": "Aprire la porta a sud", "callback": c.open_door_nokey_24},
+            {"text": "Aprire la porta a est", "callback": c.go_25}
+        ]
     return actions
 
 
@@ -122,4 +136,31 @@ def s25_actions():
                 {"text": "Torna indietro nel corridoio", "callback": c.go_24},
                 {"text": "Cerca nel cadavere", "callback": c.pick_up_key2},
             ]
+    return actions
+
+
+def s34_actions():
+    """Restituisce le azioni possibili nella stanza 1,4."""
+    if pg.l1_undead.PV > 0:
+        actions = [
+            {"text": "Attacca lo zombie", "callback": c.combat_36},
+            # {"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05}
+        ]
+    else:
+        actions = []
+        actions.append({"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05})
+
+        if c.v06a is False:
+            actions.append({"text": "Cerca tra i resti dell'imp", "callback": c.pick_up_key3})
+        if c.v06 is False:
+            actions.append({"text": "Abbeverati alla fontana", "callback": c.drink_06})
+
+    return actions
+
+
+
+    actions = [
+        {"text": "Vai verso le scale", "callback": c.go_34},
+        {"text": "Torna indietro verso il corridoio", "callback": c.go_24}
+    ]
     return actions

@@ -15,7 +15,7 @@ v05 = False # porta stanza chiusa/apertta
 v06 = False # bevutto alla fontana
 v06a = False # raccolta chiave imp
 v25 = False # chiave guardia
-
+v24 = False # porta aperta / chiusa
 
 ############################################MOVIMENTI###################################################################
 
@@ -86,6 +86,13 @@ def go_25():
             i.create_buttons(a.s25_actions())
 
 
+def go_34():
+    """Muove il giocatore nella stanza 3,4."""
+    i.image_wand("./media/img_lv1/34")
+    i.show_text(map_l1.s34.description)
+    i.create_buttons(a.s34_actions())
+
+
 ##############################################AZIONI####################################################################
 
 def drink_06():
@@ -122,6 +129,16 @@ def open_door_nokey_24():
     i.show_text(map_l1.s24.description + "\n\n---------------------------------\n\nNon hai la chiave.")
     i.create_buttons(a.s24_actions())
 
+def open_door_24():
+    global v24
+    if 'chiave3' in pg.PG.inventory:
+        v24 = True
+        pg.PG.inventory.remove('chiave3')
+        i.show_text(map_l1.s05.description +"\n\n---------------------------------\n\nHai aperto la porta.")
+        i.create_buttons(a.s24_actions())
+    else:
+        i.show_text(map_l1.s05.description +"\n\n---------------------------------\n\nNon hai la chiave.")
+        i.create_buttons(a.s24_actions())
 
 def pick_up_key():
     """Raccoglie la chiave."""
@@ -175,7 +192,13 @@ def dialog_25_combat():
                                          "\n\n'QUESTO NON E' UN POSTO PER GIROVAGARE' \n\nil vecchio si alza e agita un bastone verso di te.")
     cs.combat(pg.PG, pg.l1_oldguard, 24, 25)
 
-
+def combat_34():
+    """Combattere imp in 34"""
+    i.show_text(map_l1.s34.description + "\n\n---------------------------------"
+                                       + "\n\nVita del nemico: {} ".format(pg.l1_imp.PV)
+                                       + "\n\n---------------------------------"              
+                                         "\n\nIl non morto ti attacca in cerca della tua vita")
+    cs.combat(pg.PG, pg.l1_undead, 24, 34)
 
 ############################################DIALOGHI####################################################################
 

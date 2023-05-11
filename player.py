@@ -53,6 +53,17 @@ class IMP(Player):
     def loot(self):
         return self.g
 
+class Zombie(Player):
+    def __init__(self, PV=0, PF=0, PM=0, g=0, inventory=None):
+        super().__init__(PV,PF,PM,g)
+        self.PV += 35
+        self.PF += 10
+        self.PM += 0
+        self.g += 0
+
+    def loot(self):
+        return self.g
+
 
 def edit_stats(t, bonus):
     if t == 'M':
@@ -63,5 +74,6 @@ def edit_stats(t, bonus):
 PG = Player(PV=0, PF=0, PM=0, g=0, inventory=[])
 l1_oldguard = Oldguard(PV=0, PF=0, PM=0, g=0, inventory=[])
 l1_imp = IMP(PV=0, PF=0, PM=0, g=0, inventory=[])
+l1_undead = Zombie(PV=0, PF=0, PM=0, g=0, inventory=[])
 
 
