@@ -37,8 +37,8 @@ def new_play():
 def start_game_actions():
     """Restituisce le azioni possibili nella schermata di inizio gioco."""
     actions = [
-        {"text": translations["level_selection"][i.lang], "callback": level_selector},
-        {"text": translations["quit_game"][i.lang], "callback": end_game}
+        {"text": interface_translations["level_selection"][i.lang], "callback": level_selector},
+        {"text": interface_translations["quit_game"][i.lang], "callback": end_game}
     ]
     return actions
 
@@ -46,9 +46,9 @@ def start_game_actions():
 def level_game_actions():
     """Restituisce le azioni possibili nella schermata di inizio gioco."""
     actions = [
-        {"text": translations["lev_1"][i.lang], "callback": select_level_1},
-        {"text": translations["lev_2"][i.lang], "callback": select_level_2},
-        {"text": translations["quit_game"][i.lang], "callback": end_game}
+        {"text": interface_translations["lev_1"][i.lang], "callback": select_level_1},
+        {"text": interface_translations["lev_2"][i.lang], "callback": select_level_2},
+        {"text": interface_translations["quit_game"][i.lang], "callback": end_game}
     ]
     return actions
 
@@ -63,8 +63,8 @@ def class_selector():
 
 def class_actions():
     actions = [
-        {"text": translations["warrior"][i.lang], "callback": warrior},
-        {"text": translations["mage"][i.lang], "callback": mage}
+        {"text": interface_translations["warrior"][i.lang], "callback": warrior},
+        {"text": interface_translations["mage"][i.lang], "callback": mage}
     ]
     return actions
 
