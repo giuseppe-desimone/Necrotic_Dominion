@@ -77,8 +77,8 @@ class Room:
         i.show_text(render_text)
         i.create_buttons(actions)
 
-    def action(self, description, callback, action_arg=None, activation=lambda x:x, arg=True, repeat=True, matrix=None, room=None):
-        self.actions.append(Action(description, callback, action_arg, activation, arg, repeat, matrix, room))
+    def action(self, description, callback, i, action_arg=None, activation=lambda x:x, arg=True, repeat=True, matrix=None, room=None):
+        self.actions.append(Action(description, callback, i, action_arg, activation, arg, repeat, matrix, room))
         return self
 
 

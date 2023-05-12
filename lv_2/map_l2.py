@@ -15,7 +15,7 @@ def setup_level_2(i):
     matrix_l2[0][4].item = Item("key0").action("Raccogli la chiave", pg.PG.item_pickup, "key0", repeat=False, matrix=matrix_l2, room=(0, 4))
     matrix_l2[0][4].action(
         "Vai ad est",
-        matrix_l2[0][3].render(i),
+        matrix_l2[0][3].render, i,
         matrix=matrix_l2,
         room=(0, 3)
     )
@@ -24,7 +24,7 @@ def setup_level_2(i):
     matrix_l2[0][3].img = "./media/img_lv1/03"
     matrix_l2[0][3].action(
         "Vai a ovest",
-        matrix_l2[0][4].render(i),
+        matrix_l2[0][4].render, i,
         matrix=matrix_l2,
         room=(0, 4)
     )
