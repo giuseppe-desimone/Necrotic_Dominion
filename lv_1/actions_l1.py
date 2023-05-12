@@ -19,16 +19,16 @@ def s04_actions():
     """Restituisce le azioni possibili nella stanza iniziale."""
     if 'chiave' in pg.PG.inventory or 'spada' in pg.PG.inventory:
         actions = [
-            {"text": "Andare a est", "callback": c.go_05},
-            {"text": "Andare a ovest", "callback": c.go_03},
-            {"text": "Vai a sud in quello che sembra un corridoio buio", "callback": c.go_14}
+            {"text": ["go-east"][i.lang], "callback": c.go_05},
+            {"text": ["go-west"][i.lang], "callback": c.go_03},
+            {"text": ["l1-04_l1-14"][i.lang], "callback": c.go_14}
         ]
     else:
         actions = [
-            {"text": "Andare a est", "callback": c.go_05},
-            {"text": "Andare ad ovest", "callback": c.go_03},
-            {"text": "Vai a sud in quello che sembra un corridoio buio", "callback": c.go_14},
-            {"text": "Raccogliere la chiave", "callback": c.pick_up_key}
+            {"text": ["go-east"][i.lang], "callback": c.go_05},
+            {"text": ["go-west"][i.lang], "callback": c.go_03},
+            {"text": ["l1-04_l1-14"][i.lang], "callback": c.go_14},
+            {"text": ["pickup-key"][i.lang], "callback": c.pick_up_key}
         ]
     return actions
 
