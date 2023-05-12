@@ -27,7 +27,7 @@ def s04_actions():
         actions = [
             {"text":  actions_translations["go-east"][i.lang], "callback": c.go_05},
             {"text":  actions_translations["go-west"][i.lang], "callback": c.go_03},
-            {"text":  actions_translations["l1-04_l1-14"][i.lang], "callback": c.go_14},
+            {"text":  actions_translations["l1_04-14"][i.lang], "callback": c.go_14},
             {"text":  actions_translations["pickup-key"][i.lang], "callback": c.pick_up_key}
         ]
     return actions
@@ -47,12 +47,12 @@ def s05_actions():
     if c.v05 is True:
         actions = [
             {"text": actions_translations["go-west"][i.lang], "callback": c.go_04},
-            {"text": "Entra nella porta ad est", "callback": c.go_06}
+            {"text": actions_translations["l1_05-06"][i.lang], "callback": c.go_06}
         ]
     else:
         actions = [
-            {"text": "Vai ad ovest nell'atrio", "callback": c.go_04},
-            {"text": "Aprire la porta", "callback": c.open_door_05}
+            {"text": actions_translations["l1_05-04"][i.lang], "callback": c.go_04},
+            {"text": actions_translations["open-door"][i.lang], "callback": c.open_door_05}
         ]
     return actions
 

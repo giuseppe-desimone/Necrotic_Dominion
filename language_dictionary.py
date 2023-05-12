@@ -46,13 +46,15 @@ objects_translations = {
 }
 
 actions_translations = {
-    "back-east":                {"it":"Torna a Est",                                        "en":"Go back to East"},
-    "open-chest":               {"it":"Apri la cassapanca",                                 "en":"Open chest"},
-    "go-east":                  {"it":"Vai a Est",                                          "en":"Go to East"},
-    "go-west":                  {"it":"Vai a Ovest",                                        "en":"Go to Ovest"},
-    "l1-04_l1-14":              {"it":"Vai a Sud in quello che sembra un corridoio buio",   "en":"Go to South throught a dark corridor"},
-    "pickup-key":               {"it":"Raccogli la chiave",                                 "en":"Pick up the key"},
-
+    "back-east":                 {"it":"Torna a Est",                                       "en":"Go back to East"},
+    "open-chest":                {"it":"Apri la cassapanca",                                "en":"Open chest"},
+    "go-east":                   {"it":"Vai a Est",                                         "en":"Go to East"},
+    "go-west":                   {"it":"Vai a Ovest",                                       "en":"Go to Ovest"},
+    "pickup-key":                {"it":"Raccogli la chiave",                                "en":"Pick up the key"},
+    "open-door":                 {"it":"Apri la porta",                                     "en":"Open the door"},
+    "l1_04-14":                  {"it":"Vai a Sud in quello che sembra un corridoio buio",  "en":"Go to South throught a dark corridor"},
+    "l1_05-06":                  {"it": "Entra nella porta ad Est",                         "en": "Go back using the East door"},
+    "l1_05-04":                  {"it": "Vai ad Ovest nell'atrio",                          "en": "Go back West, to the foyer"},
 }
 
 """
