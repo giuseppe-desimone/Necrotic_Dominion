@@ -1,6 +1,6 @@
 """v0.12"""
 
-translations = {# add arcane lang??
+interface_translations = {# add arcane lang??
         "interface_life":       { "en": "Life",                 "it":"Vita" },
         "interface_strenght":   { "en": "Strenght",             "it":"Forza" },
         "interface_mana":       { "en": "Mana",                 "it":"Mana" },
@@ -15,15 +15,16 @@ translations = {# add arcane lang??
 
         "warrior" :             {"en":"Skilled in combat",      "it":"Abile nel combattimento"},
         "mage" :                {"en":"Skilled in arcane arts", "it":"Abile nelle arti arcane"},
+}
 
+level_translations = {
         "l1_03":                {"en":"In the heart of the castle lies \nthe armory, a vast chamber with \nstone walls adornedwith ancient \ncrests and dusty shields.\n\nOnce the guardian of thousands of weapons and armor, now the \ntowering shelves and armory \ncabinets remain empty and silent.\n\nAn indescribable sadness lingers \nin the air, only interrupted by \nthe sight of a chest in a \ncorner.",
                                  "it":"Nel cuore del castello si trova \nl’armeria, una vasta stanza dalle pareti in pietra ornate da \nantichi stemmi impolverati. \n\nUna volta custode di migliaia di \narmi e armature, ora le grandi \nmensole e gli armadi dell’armeria \nrimangono vuoti e silenziosi. \n\nUn’indicibile tristezza si respira nell’aria, interrotta solo dalla \nvista di una cassapanca in un \nangolo."},
         "l1_04":                {"en":"The castle's foyer is spacious,\nwith high frescoed ceilings and\nstone walls that reflect the \nlight.\n\nThe scent of torch smoke and\nwax candles fills the air,\nwhile footsteps echo on the dark\nmarble floors.\n\nOn either side of the foyer\nstand large oak doors, intricately\ncarved, one leading east\nand the other west.\n\nA wide corridor opens\nsouthward, with wall-mounted\nchandeliers illuminating the path\nand creating dancing shadows.",
                                  "it":"L’atrio del castello è spazioso, \ncon alti soffitti affrescati e \npareti di pietra che riflettono\nla luce. \n\nL’odore di fumo delle torce e di \ncera delle candele riempie \nl’aria, mentre i passi echeggiano \nsui pavimenti di marmo scuro. \n\nAi lati dell’atrio si trovano \ngrandi porte di quercia scolpite \na mano, una rivolta verso est e \nl’altra verso ovest. \n\nUn ampio corridoio si apre verso \nsud, con i lampadari appesi alle \npareti di pietra che illuminano \nil percorso e creano ombre \ndanzanti."},
         "l1_05":                {"en":"You find yourself in an empty and\ndesolate room, devoid of furniture\nor lights. \n\nYour only way out is a\ndoor to the west, while to the \neast there is a lock. \n\nThe air is silentand still, \ncreating an eerie and\nmysterious atmosphere.",
                                  "it":"Ti trovi in una stanza vuota e \ndesolata, senza mobili o luci. \n\nLa tua unica via di uscita è una \nporta a ovest, mentre a est c'è \nuna serratura. \n\nL'aria è silenziosa e immobile, \ncreando un'atmosfera inquietante e \nmisteriosa."},
-        "l1_06":                {"en":
-"At the center of the dark hall, \nthere lies the sacred fountain, \nemitting a faint blue light \nand shrouded in mysterious mist. \n\nThe water that flows from it \nis tainted by the souls of \nsacrifices, nourishing ancient \ndark deities and bestowing \na power beyond human \ncomprehension upon those \nwho dare to approach.",
+        "l1_06":                {"en":"At the center of the dark hall, \nthere lies the sacred fountain, \nemitting a faint blue light \nand shrouded in mysterious mist. \n\nThe water that flows from it \nis tainted by the souls of \nsacrifices, nourishing ancient \ndark deities and bestowing \na power beyond human \ncomprehension upon those \nwho dare to approach.",
                                  "it":"Al centro del salone buio si \ntrova la fontana sacra, che \nemana una flebile luce \nblu e si avvolge in una \nfoschia misteriosa. \n\nL'acqua che sgorga da \nessa è corrotta dalle anime \ndei sacrifici e nutre \nantiche divinità oscure, \noffrendo un potere oltre \nla comprensione umana a \ncoloro che osano \navvicinarsi."},
         "l1_14":                {"en":"You find yourself in a lavish \ncorridor with a marble floor, il-\nluminated by hanging chandeliers. \n\nThe atmosphere is solemn and \nformal, but also somewhat \nintimidating. \n\nThe corridor seems to stretch \nendlessly, with no doors or \nwindows in sight, as if it were a labyrinth without an exit.",
                                  "it":"Ti trovi in un sontuoso corridoio dal pavimento di marmo, illuminato da lampadari pendenti. \n\nL'atmosfera è solenne e formale, \nma anche un po' intimidatoria. \n\nIl corridoio sembra non avere fine e non si vedono porte né finestre, come se fosse un labirinto senza\nvia d'uscita."},
@@ -43,6 +44,11 @@ translations = {# add arcane lang??
 
 objects_translations = {
     "key0" : {"it":"\n\n---------------------------------\n\nNoti una chiave arrugginita a terra", "en":"\n\n---------------------------------\n\nYou see a rusty key on the ground"}
+}
+
+actions_translations = {
+    
+
 }
 
 """

@@ -17,14 +17,14 @@ mappa_l1 = [[Stanza(X=i, Y=j, description="descrizione", objects=[]) for j in ra
 
 # Aggiunta di alcune stanze alla mappa
 
-mappa_l1[0][3].description = translations["l1_03"][i.lang]
-mappa_l1[0][4].description = translations["l1_04"][i.lang]
-mappa_l1[0][5].description = translations["l1_05"][i.lang]
-mappa_l1[0][6].description = translations["l1_06"][i.lang]
-mappa_l1[1][4].description = translations["l1_14"][i.lang]
-mappa_l1[2][4].description = translations["l1_24"][i.lang]
-mappa_l1[2][5].description = translations["l1_25"][i.lang]
-mappa_l1[3][4].description = translations["l1_34"][i.lang]
+mappa_l1[0][3].description = level_translations["l1_03"][i.lang]
+mappa_l1[0][4].description = level_translations["l1_04"][i.lang]
+mappa_l1[0][5].description = level_translations["l1_05"][i.lang]
+mappa_l1[0][6].description = level_translations["l1_06"][i.lang]
+mappa_l1[1][4].description = level_translations["l1_14"][i.lang]
+mappa_l1[2][4].description = level_translations["l1_24"][i.lang]
+mappa_l1[2][5].description = level_translations["l1_25"][i.lang]
+mappa_l1[3][4].description = level_translations["l1_34"][i.lang]
 
 ########################################################################################################################
 
