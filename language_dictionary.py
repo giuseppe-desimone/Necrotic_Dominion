@@ -8,6 +8,9 @@ translations = {# add arcane lang??
         "pg_invetory":          { "en": "Inventory",            "it":"Inventario" },
 
         "class_selection" :     {"en":"Class Selection",        "it":"Selezione della classe"},
+        "level_selection" :     {"en":"Level Selection",        "it":"Selezione del livello"},
+        "lev_1" :               {"en":"Level 1",                "it":"Livello 1"},
+        "lev_2" :               {"en":"Level 2",                "it":"Livello 2"},
         "quit_game" :           {"en":"Quit",                   "it":"Chiudi il gioco"},
 
         "warrior" :             {"en":"Skilled in combat",      "it":"Abile nel combattimento"},

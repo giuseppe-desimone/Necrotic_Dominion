@@ -1,6 +1,7 @@
 """v0.12"""
 
 from components import *
+from interface import *
 
 class Player:
     def __init__(self, PV, PF, PM, g, inventory=None):

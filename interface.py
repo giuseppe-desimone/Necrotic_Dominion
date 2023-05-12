@@ -37,9 +37,10 @@ class InterfaceSingleton(metaclass=InterfaceMeta):
         self.window.title("Necrotic Dominion v0.12")
         self.window.geometry("800x600")
         self.window.resizable(False, False)
-        # self.window.iconbitmap("./media/ic.ico")
+        self.window.iconbitmap("./media/ic.ico")
 
         self.lang = "en"
+        self.i = self  # Assign the instance to self.i
 
         # Create the textbox over the image
         self.text_box_over_image = tk.Text(self.window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0,
@@ -135,5 +136,6 @@ class InterfaceSingleton(metaclass=InterfaceMeta):
         tk_image = ImageTk.PhotoImage(resized_image)
         image_label = tk.Label(self.window, image=tk_image)
         image_label.place(x=0, y=32, width=512, height=512)
+
 
 i = InterfaceSingleton()

@@ -1,5 +1,7 @@
-from interface import * 
+import interface
+from interface import *
 from language_dictionary import *
+from lv_2 import map_l2
 from lv_1 import callbacks_l1 as c
 
 def new_play():
@@ -22,10 +24,24 @@ def new_play():
 def start_game_actions():
     """Restituisce le azioni possibili nella schermata di inizio gioco."""
     actions = [
-        {"text": translations["class_selection"][i.lang], "callback": class_caller},
+        {"text": translations["level_selection"][i.lang], "callback": level_selector},
         {"text": translations["quit_game"][i.lang], "callback": end_game}
     ]
     return actions
+
+
+def level_game_actions():
+    """Restituisce le azioni possibili nella schermata di inizio gioco."""
+    actions = [
+        {"text": translations["lev_1"][i.lang], "callback": level_1},
+        {"text": translations["lev_2"][i.lang], "callback": level_2},
+        {"text": translations["quit_game"][i.lang], "callback": end_game}
+    ]
+    return actions
+
+
+def level_selector():
+    i.create_buttons(level_game_actions())
 
 
 def class_caller():
@@ -39,6 +55,13 @@ def class_actions():
     ]
     return actions
 
+def level_1():
+    c.go_04()
+
+
+def level_2():
+    map_l2.level_2(interface.i)
+
 
 def end_game():
     i.window.destroy()
@@ -47,6 +70,7 @@ def end_game():
 def warrior():
     pg.Warrior()
     c.go_04()
+
 
 def mage():
     pg.Mage()

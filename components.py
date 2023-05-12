@@ -1,11 +1,12 @@
-
 from interface import *
 from language_dictionary import *
 
+
 class Action():
-    def __init__(self, description, action, action_arg=None, activation=lambda x:x, arg=True, repeat=True, matrix=None, room=None):
+    def __init__(self, description, action, i, action_arg=None, activation=lambda x:x, arg=True, repeat=True, matrix=None, room=None):
         self.text = description
         self.action = action
+        self.i = i
         self.activation = activation
         self.activation_arg = action_arg
         self.arg = arg
@@ -20,12 +21,12 @@ class Action():
             self.action(self.activation_arg)
         else:
             self.action()
-        self.matrix[self.room[0]][self.room[1]].render() 
+        self.matrix[self.room[0]][self.room[1]].render(self.i)  # Pass the 'i' instance to the render() method
 
     def raw(self):
         if self.can_be_done:
             if self.activation(self.arg):
-                return { "text":self.text, "callback":self.callback }
+                return { "text":self.text, "callback":self.callback}
         return {}
 
     def done(self):
@@ -40,8 +41,9 @@ class Item():
         self.bonus =bonus
         self.actions = []
 
-    def action(self, description, callback, action_arg=None, activation=lambda x:x, arg=True, repeat=True, matrix=None, room=None):
-        self.actions.append(Action(description, callback, action_arg, activation,arg, repeat, matrix, room))
+    def action(self, description, callback, i, action_arg=None, activation=lambda x: x, arg=True, repeat=True,
+               matrix=None, room=None):
+        self.actions.append(Action(description, callback, i, action_arg, activation, arg, repeat, matrix, room))
         return self
 
 class Room:
@@ -54,7 +56,7 @@ class Room:
         self.enemy = None
         self.actions = []
 
-    def render(self):
+    def render(self, i):  # Add the 'i' argument to the render() method
         render_text = self.description
         actions = []
 
@@ -62,10 +64,10 @@ class Room:
             actions.append(action.raw())
 
         if self.enemy:
-            render_text+=self.enemy.description
+            render_text += self.enemy.description
             for action in self.enemy.actions:
                 actions.append(action.raw())
-        
+
         if self.item:
             render_text += objects_translations[self.item.id][i.lang]
             for action in self.item.actions:
