@@ -69,7 +69,7 @@ class Room:
                 actions.append(action.raw())
 
         if self.item:
-            render_text += objects_translations[self.item.id][i.lang]
+            render_text += objects_translations[self.item.id][i.i.lang]  # Use i.i.lang instead of i.lang
             for action in self.item.actions:
                 actions.append(action.raw())
 

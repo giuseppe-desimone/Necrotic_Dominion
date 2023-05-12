@@ -4,6 +4,15 @@ from language_dictionary import *
 from lv_2 import map_l2
 from lv_1 import callbacks_l1 as c
 
+global ll1
+
+global ll2
+
+ll1 = False
+
+ll2 = False
+
+
 def new_play():
     i.image_wand("./media/start_screen")
     i.show_text("                                   " +
@@ -44,7 +53,7 @@ def level_selector():
     i.create_buttons(level_game_actions())
 
 
-def class_caller():
+def class_selector():
     i.create_buttons(class_actions())
 
 
@@ -56,22 +65,38 @@ def class_actions():
     return actions
 
 def level_1():
-    c.go_04()
+    global ll1
+    ll1 = True
+    i.create_buttons(class_actions())
 
 
 def level_2():
-    map_l2.level_2(interface.i)
+    global ll2
+    ll2 = True
+    i.create_buttons(class_actions())
+
+
+def warrior():
+    global ll1, ll2
+    pg.Warrior()
+    if ll1 is True:
+        #ll1 = False
+        c.go_04()
+    elif ll2 is True:
+        #ll2 = False
+        map_l2.level_2(interface.i)
+
+
+def mage():
+    global ll1, ll2
+    pg.Mage()
+    if ll1 is True:
+        #ll1 = False
+        c.go_04()
+    elif ll2 is True:
+        #ll2 = False
+        map_l2.level_2(interface.i)
 
 
 def end_game():
     i.window.destroy()
-
-
-def warrior():
-    pg.Warrior()
-    c.go_04()
-
-
-def mage():
-    pg.Mage()
-    c.go_04()
