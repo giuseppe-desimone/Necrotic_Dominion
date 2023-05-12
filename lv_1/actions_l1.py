@@ -4,7 +4,6 @@ import player as pg
 from lv_1 import callbacks_l1 as c
 from lv_2.map_l2 import *
 
-
 def s03_actions():
     """Restituisce le azioni possibili nella stanza 0,3."""
     actions = [
@@ -31,16 +30,6 @@ def s04_actions():
             {"text":  actions_translations["pickup-key"][i.lang], "callback": c.pick_up_key}
         ]
     return actions
-
-# def s04_actions():
-#     actions = []
-#     actions.push({"text": "Andare a est", "callback": c.go_05})
-#     actions.push({"text": "Andare ad ovest", "callback": c.go_03})
-#     actions.push({"text": "Vai a sud in quello che sembra un corridoio buio", "callback": c.go_14})
-#     if not pg.PG.inventory.get("chiave") : actions.push({"text": "Raccogliere la chiave", "callback": c.pick_up_key}) 
-#     if not pg.PG.inventory.get("spada") : actions.push({"text": "Raccogliere la chiave", "callback": c.pick_up_key}) 
-
-#     return actions
 
 def s05_actions():
     """Restituisce le azioni possibili nella stanza 0,5."""
@@ -111,28 +100,19 @@ def s24_actions():
 
 def s25_actions():
     """Restituisce le azioni possibili nella stanza 2,5."""
+    actions = [
+        {"text": actions_translations["l1_25-24"], "callback": c.go_24},
+    ]
     if c.v25 is True:
         if pg.l1_oldguard.PV > 0:
-            actions = [
-                {"text": "Torna indietro nel corridoio", "callback": c.go_24},
-                {"text": "Uccidi la guardia nel sonno", "callback": c.dialog_25_kill},
-            ]
-        else:
-            actions = [
-                {"text": "Torna indietro nel corridoio", "callback": c.go_24},
-            ]
+            actions.append({"text": actions_translations["25kill"], "callback": c.dialog_25_kill})
     else:
         if pg.l1_oldguard.PV > 0:
-            actions = [
-                {"text": "Torna indietro nel corridoio", "callback": c.go_24},
-                {"text": "Parla con la guardia", "callback": c.dialog_25_start},
-                {"text": "Attacca la guardia", "callback": c.dialog_25_combat}
-            ]
+           
+            actions.append({"text": actions_translations["25speak"], "callback": c.dialog_25_start})
+            actions.append({"text": actions_translations["25attack"], "callback": c.dialog_25_combat})
         else:
-            actions = [
-                {"text": "Torna indietro nel corridoio", "callback": c.go_24},
-                {"text": "Cerca nel cadavere", "callback": c.pick_up_key2},
-            ]
+            actions.append({"text": actions_translations["25inspect"], "callback": c.pick_up_key2})
     return actions
 
 
@@ -140,13 +120,13 @@ def s34_actions():
     """Restituisce le azioni possibili nella stanza 1,4."""
     if pg.l1_undead.PV > 0:
         actions = [
-            {"text": "Attacca lo zombie", "callback": c.combat_34},
+            {"text": actions_translations["34attack"], "callback": c.combat_34},
             # {"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05}
         ]
     else:
         actions = [
-            {"text": "Sali le scale", "callback": level_2},
-            {"text": "Torna indietro", "callback": c.go_24}
+            {"text": actions_translations["upstairs"], "callback": level_2},
+            {"text": actions_translations["go-back"], "callback": c.go_24}
         ]
 
     return actions

@@ -46,7 +46,7 @@ def go_06():
         i.show_text(map_l1.s06.description+ "\n\n---------------------------------\n\nMentre osservi la fontana con occhi curiosi, un'entità malvagia e ripugnante si innalza in volo.\nDai suoi occhi percepisci una volontà mortale.")
         i.create_buttons(a.s06_actions())
     else: 
-        i.show_text(map_l1.s06.description+ "\n\n---------------------------------\n\nUna massa nera, puttrescente e informe giace dov'era un tempo l'imp.")
+        i.show_text(map_l1.s06.description+ "\n\n---------------------------------\n\nUna massa nera, putrescente e informe giace dov'era un tempo l'imp.")
         i.create_buttons(a.s06_actions())
 
 

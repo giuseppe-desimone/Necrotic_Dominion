@@ -67,12 +67,12 @@ class Room:
             actions.append(action.raw())
 
         if self.enemy:
-            render_text += self.enemy.description
+            render_text += "\n\n---------------------------------\n\n" +  self.enemy.description
             for action in self.enemy.actions:
                 actions.append(action.raw())
 
         if self.item:
-            render_text += objects_translations[self.item.id][i.lang]  # Use i.i.lang instead of i.lang
+            render_text += "\n\n---------------------------------\n\n" + objects_translations[self.item.id][i.lang]  # Use i.i.lang instead of i.lang
             for action in self.item.actions:
                 actions.append(action.raw())
 

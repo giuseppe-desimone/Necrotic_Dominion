@@ -42,12 +42,13 @@ level_translations = {
 }
 
 objects_translations = {
-    "key0" : {"it":"\n\n---------------------------------\n\nNoti una chiave arrugginita a terra", "en":"\n\n---------------------------------\n\nYou see a rusty key on the ground"}
+    "key0" : {"it":"Noti una chiave arrugginita a terra", "en":"You see a rusty key on the ground"}
 }
 
 actions_translations = {
     "back-east":            {"it": "Torna a Est",                                       "en": "Go back to East"},
     "open-chest":           {"it": "Apri la cassapanca",                                "en": "Open chest"},
+    "go-back":              {"it": "Torna indietro",                                    "en": "Go back"},
     "go-east":              {"it": "Vai a Est",                                         "en": "Go to East"},
     "go-west":              {"it": "Vai a Ovest",                                       "en": "Go to Ovest"},
     "pickup-key":           {"it": "Raccogli la chiave",                                "en": "Pick up the key"},
@@ -57,6 +58,7 @@ actions_translations = {
     "open-door-south":      {"it": "Apri la porta a Sud",                               "en": "Open the South door"},
     "enter-door-east":      {"it": "Entra nela porta ad Est",                           "en": "Enter the East door"},
     "enter-door-south":     {"it": "Entra nela porta a Sud",                            "en": "Enter the South door"},
+    "upstairs":             {"it": "Sali le scale",                                     "en": "Go up the stairs"},
     "l1_04-14":             {"it": "Vai a Sud in quello che sembra un corridoio buio",  "en": "Go South through a dark corridor"},
     "l1_05-06":             {"it": "Entra nella porta ad Est",                          "en": "Go back using the East door"},
     "l1_05-04":             {"it": "Vai ad Ovest nell'atrio",                           "en": "Go back West, to the foyer"},
@@ -67,6 +69,12 @@ actions_translations = {
     "l1_14-04":             {"it": "Vai verso l'atrio",                                 "en": "Go towards the foyer"},
     "l1_14-24":             {"it": "Continua a percorrere il corridoio verso Sud",      "en": "Keep following the corridor South"},
     "l1_24-14":             {"it": "Percorri il corridoio verso nord",                  "en": "Follow the corridor in North direction"},
+    "l1_25-24":             {"it": "Torna indietro nel corridoio",                      "en": "Go back in the corridor"},
+    "25kill":               {"it": "Uccidi la guardia nel sonno",                       "en": "Kill the guard in his sleep"},
+    "25dialog":             {"it": "Parla con la guardia",                              "en": "Speak with the guard"},
+    "25attack":             {"it": "Attacca la guardia",                                "en": "Attack the guard"},
+    "25inspect":            {"it": "Cerca nel cadavere",                                "en": "Inspect the dead body"},
+    "34attack":             {"it": "Attacca lo zombie",                                 "en": "Attack the zombie"},
 }
 
 """
