@@ -7,7 +7,7 @@ from components import *
 import player as pg
 from interface import *
 
-def setup_level_2(i):
+def setup_level_2():
     matrix_l2 = [[Room(X=i, Y=j) for j in range(9)] for i in range(9)]
 
     matrix_l2[0][4].description = "L’atrio del castello è spazioso, \ncon alti soffitti affrescati e \npareti di pietra che riflettono\nla luce. \n\nL’odore di fumo delle torce e di \ncera delle candele riempie \nl’aria, mentre i passi echeggiano \nsui pavimenti di marmo scuro. \n\nAi lati dell’atrio si trovano \ngrandi porte di quercia scolpite \na mano, una rivolta verso est e \nl’altra verso ovest. \n\nUn ampio corridoio si apre verso \nsud, con i lampadari appesi alle \npareti di pietra che illuminano \nil percorso e creano ombre \ndanzanti."
@@ -15,7 +15,7 @@ def setup_level_2(i):
     matrix_l2[0][4].item = Item("key0").action("Raccogli la chiave", pg.PG.item_pickup, "key0", repeat=False, matrix=matrix_l2, room=(0, 4))
     matrix_l2[0][4].action(
         "Vai ad est",
-        matrix_l2[0][3].render, i,
+        matrix_l2[0][3].render,
         matrix=matrix_l2,
         room=(0, 3)
     )
@@ -24,7 +24,7 @@ def setup_level_2(i):
     matrix_l2[0][3].img = "./media/img_lv1/03"
     matrix_l2[0][3].action(
         "Vai a ovest",
-        matrix_l2[0][4].render, i,
+        matrix_l2[0][4].render,
         matrix=matrix_l2,
         room=(0, 4)
     )
@@ -32,6 +32,6 @@ def setup_level_2(i):
     return matrix_l2
 
 
-def level_2(i):
-    matrix_l2 = setup_level_2(i)
-    matrix_l2[0][4].render(i)
+def level_2():
+    matrix_l2 = setup_level_2()
+    matrix_l2[0][4].render()

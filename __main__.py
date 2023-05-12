@@ -1,6 +1,5 @@
 """v0.12"""
 
-import interface
 import pygame
 import interactions.menu
 

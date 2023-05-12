@@ -1,7 +1,11 @@
-import interface
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from interface import *
 from language_dictionary import *
-from lv_2 import map_l2
+from lv_2.map_l2 import *
 from lv_1 import callbacks_l1 as c
 
 global ll1
@@ -42,8 +46,8 @@ def start_game_actions():
 def level_game_actions():
     """Restituisce le azioni possibili nella schermata di inizio gioco."""
     actions = [
-        {"text": translations["lev_1"][i.lang], "callback": level_1},
-        {"text": translations["lev_2"][i.lang], "callback": level_2},
+        {"text": translations["lev_1"][i.lang], "callback": select_level_1},
+        {"text": translations["lev_2"][i.lang], "callback": select_level_2},
         {"text": translations["quit_game"][i.lang], "callback": end_game}
     ]
     return actions
@@ -64,13 +68,13 @@ def class_actions():
     ]
     return actions
 
-def level_1():
+def select_level_1():
     global ll1
     ll1 = True
     i.create_buttons(class_actions())
 
 
-def level_2():
+def select_level_2():
     global ll2
     ll2 = True
     i.create_buttons(class_actions())
@@ -84,7 +88,7 @@ def warrior():
         c.go_04()
     elif ll2 is True:
         #ll2 = False
-        map_l2.level_2(interface.i)
+        level_2()
 
 
 def mage():
@@ -95,7 +99,8 @@ def mage():
         c.go_04()
     elif ll2 is True:
         #ll2 = False
-        map_l2.level_2(interface.i)
+        print("l2")
+        level_2()
 
 
 def end_game():

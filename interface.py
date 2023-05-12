@@ -9,8 +9,6 @@ sys.path.append(master_path)
 import tkinter as tk
 from PIL import Image, ImageTk
 
-import os
-
 import player as pg
 
 from language_dictionary import *
@@ -37,10 +35,9 @@ class InterfaceSingleton(metaclass=InterfaceMeta):
         self.window.title("Necrotic Dominion v0.12")
         self.window.geometry("800x600")
         self.window.resizable(False, False)
-        self.window.iconbitmap("./media/ic.ico")
+        # self.window.iconbitmap("./media/ic.ico")
 
         self.lang = "en"
-        self.i = self
 
         # Create the textbox over the image
         self.text_box_over_image = tk.Text(self.window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0,
