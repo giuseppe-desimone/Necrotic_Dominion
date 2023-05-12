@@ -52,9 +52,14 @@ actions_translations = {
     "go-west":                   {"it":"Vai a Ovest",                                       "en":"Go to Ovest"},
     "pickup-key":                {"it":"Raccogli la chiave",                                "en":"Pick up the key"},
     "open-door":                 {"it":"Apri la porta",                                     "en":"Open the door"},
-    "l1_04-14":                  {"it":"Vai a Sud in quello che sembra un corridoio buio",  "en":"Go to South throught a dark corridor"},
-    "l1_05-06":                  {"it": "Entra nella porta ad Est",                         "en": "Go back using the East door"},
-    "l1_05-04":                  {"it": "Vai ad Ovest nell'atrio",                          "en": "Go back West, to the foyer"},
+    "l1_04-14":                  {"it":"Vai a Sud in quello che sembra un corridoio buio",  "en":"Go South throught a dark corridor"},
+    "l1_05-06":                  {"it": "Entra nella porta ad Est",                         "en":"Go back using the East door"},
+    "l1_05-04":                  {"it": "Vai ad Ovest nell'atrio",                          "en":"Go back West, to the foyer"},
+    "l1_06-05":                  {"it": "Vai ad Ovest verso la stanza vuota",               "en":"Go back West, to the empty room"},
+    "06pickup":                  {"it": "Cerca tra i resti dell'imp",                       "en":"Search the imp's ashes"},
+    "06drink":                   {"it": "Abbeverati alla fontana",                          "en":"Drink at the fountain"},
+    "06attack":                  {"it": "Attacca l'imp",                                    "en":"Attack the imp"},
+
 }
 
 """
