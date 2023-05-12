@@ -19,16 +19,16 @@ def s04_actions():
     """Restituisce le azioni possibili nella stanza iniziale."""
     if 'chiave' in pg.PG.inventory or 'spada' in pg.PG.inventory:
         actions = [
-            {"text": ["go-east"][i.lang], "callback": c.go_05},
-            {"text": ["go-west"][i.lang], "callback": c.go_03},
-            {"text": ["l1-04_l1-14"][i.lang], "callback": c.go_14}
+            {"text":  actions_translations["go-east"][i.lang], "callback": c.go_05},
+            {"text":  actions_translations["go-west"][i.lang], "callback": c.go_03},
+            {"text":  actions_translations["l1-04_l1-14"][i.lang], "callback": c.go_14}
         ]
     else:
         actions = [
-            {"text": ["go-east"][i.lang], "callback": c.go_05},
-            {"text": ["go-west"][i.lang], "callback": c.go_03},
-            {"text": ["l1-04_l1-14"][i.lang], "callback": c.go_14},
-            {"text": ["pickup-key"][i.lang], "callback": c.pick_up_key}
+            {"text":  actions_translations["go-east"][i.lang], "callback": c.go_05},
+            {"text":  actions_translations["go-west"][i.lang], "callback": c.go_03},
+            {"text":  actions_translations["l1-04_l1-14"][i.lang], "callback": c.go_14},
+            {"text":  actions_translations["pickup-key"][i.lang], "callback": c.pick_up_key}
         ]
     return actions
 
@@ -46,7 +46,7 @@ def s05_actions():
     """Restituisce le azioni possibili nella stanza 0,5."""
     if c.v05 is True:
         actions = [
-            {"text": "Vai ad ovest", "callback": c.go_04},
+            {"text": actions_translations["go-west"][i.lang], "callback": c.go_04},
             {"text": "Entra nella porta ad est", "callback": c.go_06}
         ]
     else:
