@@ -18,9 +18,9 @@ class Action():
     def callback(self):
         self.done()
         if self.activation_arg is not None:
-            self.action(self.activation_arg)
+            self.action(self.activation_arg, self.i)  # Pass the 'i' argument here
         else:
-            self.action()
+            self.action(self.i)  # Pass the 'i' argument here
         self.matrix[self.room[0]][self.room[1]].render(self.i)  # Pass the 'i' instance to the render() method
 
     def raw(self):
