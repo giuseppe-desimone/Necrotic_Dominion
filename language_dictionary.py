@@ -46,20 +46,27 @@ objects_translations = {
 }
 
 actions_translations = {
-    "back-east":                 {"it":"Torna a Est",                                       "en":"Go back to East"},
-    "open-chest":                {"it":"Apri la cassapanca",                                "en":"Open chest"},
-    "go-east":                   {"it":"Vai a Est",                                         "en":"Go to East"},
-    "go-west":                   {"it":"Vai a Ovest",                                       "en":"Go to Ovest"},
-    "pickup-key":                {"it":"Raccogli la chiave",                                "en":"Pick up the key"},
-    "open-door":                 {"it":"Apri la porta",                                     "en":"Open the door"},
-    "l1_04-14":                  {"it":"Vai a Sud in quello che sembra un corridoio buio",  "en":"Go South throught a dark corridor"},
-    "l1_05-06":                  {"it": "Entra nella porta ad Est",                         "en":"Go back using the East door"},
-    "l1_05-04":                  {"it": "Vai ad Ovest nell'atrio",                          "en":"Go back West, to the foyer"},
-    "l1_06-05":                  {"it": "Vai ad Ovest verso la stanza vuota",               "en":"Go back West, to the empty room"},
-    "06pickup":                  {"it": "Cerca tra i resti dell'imp",                       "en":"Search the imp's ashes"},
-    "06drink":                   {"it": "Abbeverati alla fontana",                          "en":"Drink at the fountain"},
-    "06attack":                  {"it": "Attacca l'imp",                                    "en":"Attack the imp"},
-
+    "back-east":            {"it": "Torna a Est",                                       "en": "Go back to East"},
+    "open-chest":           {"it": "Apri la cassapanca",                                "en": "Open chest"},
+    "go-east":              {"it": "Vai a Est",                                         "en": "Go to East"},
+    "go-west":              {"it": "Vai a Ovest",                                       "en": "Go to Ovest"},
+    "pickup-key":           {"it": "Raccogli la chiave",                                "en": "Pick up the key"},
+    "open-door":            {"it": "Apri la porta",                                     "en": "Open the door"},
+    "open-door-east":       {"it": "Apri la porta ad Est",                              "en": "Open the East door"},
+    "open-door-west":       {"it": "Apri la porta ad Ovest",                            "en": "Open the West door"},
+    "open-door-south":      {"it": "Apri la porta a Sud",                               "en": "Open the South door"},
+    "enter-door-east":      {"it": "Entra nela porta ad Est",                           "en": "Enter the East door"},
+    "enter-door-south":     {"it": "Entra nela porta a Sud",                            "en": "Enter the South door"},
+    "l1_04-14":             {"it": "Vai a Sud in quello che sembra un corridoio buio",  "en": "Go South through a dark corridor"},
+    "l1_05-06":             {"it": "Entra nella porta ad Est",                          "en": "Go back using the East door"},
+    "l1_05-04":             {"it": "Vai ad Ovest nell'atrio",                           "en": "Go back West, to the foyer"},
+    "l1_06-05":             {"it": "Vai ad Ovest verso la stanza vuota",                "en": "Go back West, to the empty room"},
+    "06pickup":             {"it": "Cerca tra i resti dell'imp",                        "en": "Search the imp's ashes"},
+    "06drink":              {"it": "Abbeverati alla fontana",                           "en": "Drink at the fountain"},
+    "06attack":             {"it": "Attacca l'imp",                                     "en": "Attack the imp"},
+    "l1_14-04":             {"it": "Vai verso l'atrio",                                 "en": "Go towards the foyer"},
+    "l1_14-24":             {"it": "Continua a percorrere il corridoio verso Sud",      "en": "Keep following the corridor South"},
+    "l1_24-14":             {"it": "Percorri il corridoio verso nord",                  "en": "Follow the corridor in North direction"},
 }
 
 """

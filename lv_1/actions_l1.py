@@ -78,8 +78,8 @@ def s06_actions():
 def s14_actions():
     """Restituisce le azioni possibili nella stanza 1,4."""
     actions = [
-        {"text": "Vai verso l'atrio", "callback": c.go_04},
-        {"text": "Continua a percorrere il corridoio verso sud", "callback": c.go_24}
+        {"text": actions_translations["l1_14-04"], "callback": c.go_04},
+        {"text": actions_translations["l1_14-24"], "callback": c.go_24}
 
     ]
     return actions
@@ -90,21 +90,21 @@ def s24_actions():
     if c.v06a is True:
         if c.v24 is False:
             actions = [
-                {"text": "Percorri il corridoio verso nord", "callback": c.go_14},
-                {"text": "Aprire la porta a sud", "callback": c.open_door_24},
-                {"text": "Aprire la porta a est", "callback": c.go_25}
+                {"text": actions_translations["l1_24-14"], "callback": c.go_14},
+                {"text": actions_translations["open-door-south"], "callback": c.open_door_24},
+                {"text": actions_translations["open-door-east"], "callback": c.go_25}
             ]
         else:
             actions = [
-                {"text": "Percorri il corridoio verso nord", "callback": c.go_14},
-                {"text": "Entra nella porta a sud", "callback": c.go_34},
-                {"text": "Aprire la porta a est", "callback": c.go_25}
+                {"text": actions_translations["l1_24-14"], "callback": c.go_14},
+                {"text": actions_translations["enter-door-south"], "callback": c.go_34},
+                {"text": actions_translations["open-door-east"], "callback": c.go_25}
             ]
     else:
         actions = [
-            {"text": "Percorri il corridoio verso nord", "callback": c.go_14},
-            {"text": "Aprire la porta a sud", "callback": c.open_door_nokey_24},
-            {"text": "Aprire la porta a est", "callback": c.go_25}
+            {"text": actions_translations["l1_24-14"], "callback": c.go_14},
+            {"text": actions_translations["open-door-south"], "callback": c.open_door_nokey_24},
+            {"text": actions_translations["open-door-east"], "callback": c.go_25}
         ]
     return actions
 
