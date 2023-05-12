@@ -37,7 +37,7 @@ class InterfaceSingleton(metaclass=InterfaceMeta):
         self.window.resizable(False, False)
         # self.window.iconbitmap("./media/ic.ico")
 
-        self.lang = "en"
+        self.lang = "it"
 
         # Create the textbox over the image
         self.text_box_over_image = tk.Text(self.window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0,

@@ -84,10 +84,8 @@ def warrior():
     global ll1, ll2
     pg.Warrior()
     if ll1 is True:
-        #ll1 = False
         c.go_04()
     elif ll2 is True:
-        #ll2 = False
         level_2()
 
 
@@ -95,11 +93,8 @@ def mage():
     global ll1, ll2
     pg.Mage()
     if ll1 is True:
-        #ll1 = False
         c.go_04()
     elif ll2 is True:
-        #ll2 = False
-        print("l2")
         level_2()
 
 

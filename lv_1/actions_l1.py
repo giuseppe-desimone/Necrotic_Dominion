@@ -2,6 +2,7 @@
 
 import player as pg
 from lv_1 import callbacks_l1 as c
+from lv_2.map_l2 import *
 
 
 def s03_actions():
@@ -148,7 +149,7 @@ def s34_actions():
         ]
     else:
         actions = [
-            {"text": "Sali le scale", "callback": c.go_04},
+            {"text": "Sali le scale", "callback": level_2},
             {"text": "Torna indietro", "callback": c.go_24}
         ]
 
