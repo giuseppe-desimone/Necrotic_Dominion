@@ -7,16 +7,11 @@ from lv_2.map_l2 import *
 
 def s03_actions():
     """Restituisce le azioni possibili nella stanza 0,3."""
-    if 'spada' in pg.PG.inventory:
-        actions = [
-          {"text": "Tornare a est", "callback": c.go_04}
-        ]
-    else:
-        actions = [
-            {"text": "Tornare a est", "callback": c.go_04}
-        ]
-        if "chiave" in pg.PG.inventory:
-            actions.append({"text": "Aprire la cassapanca", "callback": c.open_chest_with_key})
+    actions = [
+        {"text": actions_translations["back-east"][i.lang], "callback": c.go_04}
+    ]
+    if "chiave" in pg.PG.inventory:
+        actions.append({"text": actions_translations["open-chest"][i.lang], "callback": c.open_chest_with_key})
     return actions
 
 

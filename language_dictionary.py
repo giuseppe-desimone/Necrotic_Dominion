@@ -38,7 +38,12 @@ objects_translations = {
 }
 
 actions_translations = {
-    
+    "back-east": {"it":"Torna a Est", "en":"Go back to east"},
+    "open-chest": {"it":"Apri la cassapanca", "en":"Open chest"},
+    "go-east": {"it":"Vai a Est", "en":"Go to East"},
+    "go-ovest": {"it":"Vai a Ovest", "en":"Go to Ovest"},
+    "l1-04_l1-14": {"it":"Vai a sud in quello che sembra un corridoio buio", "en":"Go to South throught a dark corridor"},
+    "pickup-key": {"it":"Raccogli la chiave", "en":"Pick up the key"},
 
 }
 
