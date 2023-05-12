@@ -68,7 +68,7 @@ class IMP(Player):
 class Zombie(Player):
     def __init__(self, PV=0, PF=0, PM=0, g=0, inventory=None):
         super().__init__(PV,PF,PM,g)
-        self.PV += 35
+        self.PV += 5
         self.PF += 10
         self.PM += 0
         self.g += 0

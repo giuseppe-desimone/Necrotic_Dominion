@@ -139,10 +139,10 @@ def open_door_24():
     if 'chiave3' in pg.PG.inventory:
         v24 = True
         pg.PG.inventory.remove('chiave3')
-        i.show_text(map_l1.s05.description +"\n\n---------------------------------\n\nHai aperto la porta.")
+        i.show_text(map_l1.s24.description +"\n\n---------------------------------\n\nHai aperto la porta.")
         i.create_buttons(a.s24_actions())
     else:
-        i.show_text(map_l1.s05.description +"\n\n---------------------------------\n\nNon hai la chiave.")
+        i.show_text(map_l1.s24.description +"\n\n---------------------------------\n\nNon hai la chiave.")
         i.create_buttons(a.s24_actions())
 
 def pick_up_key():

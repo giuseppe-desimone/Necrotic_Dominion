@@ -78,8 +78,9 @@ def s06_actions():
 def s14_actions():
     """Restituisce le azioni possibili nella stanza 1,4."""
     actions = [
-        {"text": "Continua a percorrere il corridoio verso sud", "callback": c.go_24},
-        {"text": "Vai verso l'atrio", "callback": c.go_04}
+        {"text": "Vai verso l'atrio", "callback": c.go_04},
+        {"text": "Continua a percorrere il corridoio verso sud", "callback": c.go_24}
+
     ]
     return actions
 
