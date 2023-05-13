@@ -23,30 +23,24 @@ def combat(pgplayer, pgenemy, previous_room, current_room):
         else:
             i.create_buttons(combat_actions(previous_room, current_room))
     else:
-        i.show_text("\n\nSei morto. Game over.")
+        i.show_text("\n\n"+interface_translations["quit_game"][i.lang]+" Game over.")
         i.create_buttons(combat_actions(previous_room, current_room))
 
 
 def combat_actions(previous_room, current_room):
     if p.PV <= 0:
         actions = [
-            {"text": "Nuova Partita", "callback": i.new_play},
-            {"text": "Chiudi il gioco", "callback": i.end_game}
+            {"text": interface_translations["new_game"][i.lang], "callback": i.new_play},
+            {"text": interface_translations["quit_game"][i.lang], "callback": i.end_game}
         ]
     else:
+        actions = [
+            {"text": interface_translations["flee"][i.lang], "callback": lambda: getattr(c, f"go_{previous_room:02d}")()},
+            {"text": interface_translations["parry"][i.lang], "callback": lambda: para(previous_room, current_room)},
+            {"text": interface_translations["arcane_missile"][i.lang], "callback": lambda: attacca(previous_room, current_room)}
+        ]
         if p.PM >= 2:
-            actions = [
-                {"text": "Lancia un missile arcano", "callback": lambda: invoke_missile(previous_room, current_room)},
-                {"text": "Scappa", "callback": lambda: getattr(c, f"go_{previous_room:02d}")()},
-                {"text": "Para", "callback": lambda: para(previous_room, current_room)},
-                {"text": "Attacca", "callback": lambda: attacca(previous_room, current_room)}
-            ]
-        else:
-            actions = [
-                {"text": "Scappa", "callback": lambda: getattr(c, f"go_{previous_room:02d}")()},
-                {"text": "Para", "callback": lambda: para(previous_room, current_room)},
-                {"text": "Attacca", "callback": lambda: attacca(previous_room, current_room)}
-            ]
+            actions.append({"text": interface_translations["quit_game"][i.lang], "callback": lambda: invoke_missile(previous_room, current_room)})
     return actions
 
 
@@ -57,9 +51,9 @@ def invoke_missile(previous_room, current_room):
 
     room_description = get_room_description(current_room)
     i.show_text(
-        room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
-                           "\n\n---------------------------------".format(e.PV)
-                         + f"\n\nLa tua energia travolge l'avversario, arrecandogli {damage} danni")
+        room_description + "\n\n---------------------------------\n\n"+ interface_translations["enemy_life"][i.lang] + str(e.PV)
+                         + "\n\n---------------------------------"
+                         + oldcombat_translations["missile_hit"][i.lang] + str(damage) + interface_translations["damage"][i.lang])
     combat(p, e, previous_room, current_room)
 
 
@@ -74,13 +68,13 @@ def para(previous_room, current_room):
         damage = roll_dice(1, 6) + e.PF  # add enemy's attack bonus
         p.PV -= damage
         i.show_text(
-            room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
-                               "\n\n---------------------------------".format(e.PV)
-                             + f"\n\nHai tentato di parare, ma hai subito {damage} danni")
+            room_description + "\n\n---------------------------------\n\n" + interface_translations["enemy_life"][i.lang] + str(e.PV)
+                             +  "\n\n---------------------------------"
+                             + oldcombat_translations["parry_miss"][i.lang] + str(damage) + interface_translations["damage"][i.lang])
     else:
-        i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
-                                       "\n\n---------------------------------".format(e.PV)
-                                     + "\n\nHai Parato!")
+        i.show_text(room_description + "\n\n---------------------------------\n\n"+ interface_translations["enemy_life"][i.lang] + str(e.PV)
+                                     + "\n\n---------------------------------"
+                                     + oldcombat_translations["parry_succ"][i.lang])
 
     combat(p, e, previous_room, current_room)
 
@@ -95,19 +89,19 @@ def attacca(previous_room, current_room):
         damage_p = roll + p.PF
         p.PV -= damage_e
         e.PV -= damage_p
-        i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
-                                       "\n\n---------------------------------".format(e.PV)
-                    + f"\n\nVieni Attaccato, hai subito {damage_e} danni"
+        i.show_text(room_description + "\n\n---------------------------------\n\n"+ interface_translations["enemy_life"][i.lang] + str(e.PV)
+                                     + "\n\n---------------------------------"
+                    + oldcombat_translations["attack_received"][i.lang] + str(damage_e) + interface_translations["damage"][i.lang]
                     + "\n\n---------------------------------"
-                    + f"\n\nColpo Sferrato, hai tolto {damage_p} danni")
+                    + oldcombat_translations["attack_done"][i.lang] + str(damage_p) + interface_translations["damage"][i.lang])
         combat(p, e, previous_room, current_room)
     else:
         roll = roll_dice(1, 6)  # roll a 6-sided dice
         damage = roll + p.PF  # add enemy's attack bonus
         e.PV -= damage
-        i.show_text(room_description + "\n\n---------------------------------\n\nVita del nemico: {} "
-                                       "\n\n---------------------------------".format(e.PV)
-                    + f"\n\nColpo Sferrato, hai tolto {damage} danni")
+        i.show_text(room_description + "\n\n---------------------------------\n\n"+ interface_translations["enemy_life"][i.lang] + str(e.PV)
+                                     + "\n\n---------------------------------"
+                    + oldcombat_translations["attack_done"][i.lang] + str(damage) + interface_translations["damage"][i.lang])
         perry = False
         combat(p, e, previous_room, current_room)
 

@@ -1,20 +1,38 @@
 """v0.12"""
 
 interface_translations = {# add arcane lang??
-        "interface_life":       { "en": "Life",                 "it":"Vita" },
-        "interface_strenght":   { "en": "Strenght",             "it":"Forza" },
-        "interface_mana":       { "en": "Mana",                 "it":"Mana" },
-        "interface_gold":       { "en": "Gold",                 "it":"Oro" },
-        "pg_invetory":          { "en": "Inventory",            "it":"Inventario" },
+        "interface_life":       { "en": "Life",                         "it":"Vita" },
+        "interface_strenght":   { "en": "Strenght",                     "it":"Forza" },
+        "interface_mana":       { "en": "Mana",                         "it":"Mana" },
+        "interface_gold":       { "en": "Gold",                         "it":"Oro" },
+        "pg_invetory":          { "en": "Inventory",                    "it":"Inventario" },
 
-        "class_selection" :     {"en":"Class Selection",        "it":"Selezione della classe"},
-        "level_selection" :     {"en":"Level Selection",        "it":"Selezione del livello"},
-        "lev_1" :               {"en":"Level 1",                "it":"Livello 1"},
-        "lev_2" :               {"en":"Level 2",                "it":"Livello 2"},
-        "quit_game" :           {"en":"Quit",                   "it":"Chiudi il gioco"},
+        "class_selection" :     {"en":"Class Selection",                "it":"Selezione della classe"},
+        "level_selection" :     {"en":"Level Selection",                "it":"Selezione del livello"},
+        "lev_1" :               {"en":"Level 1",                        "it":"Livello 1"},
+        "lev_2" :               {"en":"Level 2",                        "it":"Livello 2"},
+        "new_game" :            {"en":"New Game",                       "it":"Nuova Partita"},
+        "quit_game" :           {"en":"Quit",                           "it":"Chiudi il gioco"},
 
-        "warrior" :             {"en":"Skilled in combat",      "it":"Abile nel combattimento"},
-        "mage" :                {"en":"Skilled in arcane arts", "it":"Abile nelle arti arcane"},
+        "game_over" :           {"en":"You are dead",                   "it":"Sei morto"},
+        
+        "enemy_life" :          {"en":"Enemy Life:",                    "it":"Vita del nemico:"},
+        "arcane_missile" :      {"en":"Summon an arcane missile",       "it":"Lancia un missile arcano"},
+        "flee" :                {"en":"Flee",                           "it":"Scappa"},
+        "parry" :               {"en":"Shield",                         "it":"Para"},
+        "attack" :              {"en":"Attack",                         "it":"Attacca"},
+        "damage" :              {"en":"Damage",                         "it":"Danni"},
+
+        "warrior" :             {"en":"Skilled in combat",          "it":"Abile nel combattimento"},
+        "mage" :                {"en":"Skilled in arcane arts",     "it":"Abile nelle arti arcane"},
+}
+
+oldcombat_translations = {
+    "missile_hit" : {"it":"\n\nLa tua energia travolge l'avversario, arrecandogli ", "en":"\n\nYour energy overwhelms the opponent, causing "},
+    "parry_miss" : {"it":"\n\nHai tentato di parare, ma hai subito ", "en":"\n\nYou attempted to parry, but you took "},
+    "parry_succ" : {"it":"\n\nHai parato!", "en":"\n\nYou parry!"},
+    "attack_received" : {"it":"\n\nVieni Attaccato, hai subito ", "en":"\n\nYou're Attacked, you've got "},
+    "attack_done" : {"it":"\n\nColpo Sferrato, hai tolto ", "en":"\n\nStriked blow, you inflicted "},
 }
 
 level_translations = {
@@ -94,7 +112,22 @@ callbacks_translations = {
     "l1_pickupkeydead" : {"it":"\n\n---------------------------------\n\nHai raccolto la chiave dal cadavere.","en":"\n\n---------------------------------\n\nYou pick up the key from the dead body."},
     "l1_25gosleep" : {"it":"\n\n---------------------------------\n\nLa guardia si sdraia a terra, su quello che sembra un letto fatto di paglia, \ne cerca di addormentarsi.","en":"\n\n---------------------------------\n\nThe guard lies down on the ground, on what it looks like a bed made of straw,\nand trying to fall asleep."},
     "l1_r06drink" : {"it":"\n\n---------------------------------\n\nSenti la forte energia di centinaia di anime che ti permea. (Mana +2)","en":"\n\n---------------------------------\n\nYou feel the strenght of hundreds souls infused within you. (Mana +2)"},
+    "l1_r06drink" : {"it":"\n\n---------------------------------\n\nSenti la forte energia di centinaia di anime che ti permea. (Mana +2)","en":"\n\n---------------------------------\n\nYou feel the strenght of hundreds souls infused within you. (Mana +2)"},
+
+    "l1_06combat":{"it":"\n\nL'Imp si avventa con voracità famelica in cerca della tua vita","en":"\n\nThe Imp rushes with ravenous voracity for your life"},
+    "l1_25combat":{"it":"\n\n'QUESTO NON E' UN POSTO PER GIROVAGARE' \n\nil vecchio si alza e agita un bastone verso di te.","en":"\n\n'THIS IS NO PLACE FOR A WALK' \n\nthe old man stands up and waves a stick at you."},
+    "l1_34combat":{"it":"\n\nCon un'improvvisa forza sovrumana il cadavere si avventa su di te","en":"\n\nWith sudden superhuman strength the corpse pounces on you."},
+
+    "l1_25dialog-1":{"it":"\n\n---------------------------------\n\n'CHI SIETE!?' grida la guardia, con voce ferma.","en":"\n\n---------------------------------\n\n'WHO ARE YOU!?' shouts the guard, in a firm voice."},
+    "l1_25dialog-2":{"it":"\n\n---------------------------------\n\n'Neanche io...' sussurra la vecchia guardia, con voce rassegnata.\n'Che vuoi!?' esclama con follia.","en":"\n\n---------------------------------\n\n'Me neither...' she whispers old guard, with a resigned voice.\n'What do you want!?' he exclaims madly."},
+    "l1_25dialog-3":{"it":"\n\n---------------------------------\n\nLa vecchia guardia scoppia a ridere.\n'Non c'è via d'uscita! Questo posto è sigillato da un'antica magia'.\n'Prendi questa chiave, forse tornerà più utile a te che a me.'\n\n---------------------------------\n\nTi porge la chiave.","en":"\n\n---------------------------------\n\nThe old guard bursts into laughter.\n 'There is no way out! This place is sealed by an ancient magic'.\n'Take this key, perhaps it will be of more use to you than to me.'\n\n---------------------------------\n\nHe hands you the key."},
+    "l1_25dialog-4":{"it":"\n\n---------------------------------\n\nLa vecchia guardia ti scruta con occhi di incredula gratitudine.\n\n'Grazie', esala dalla bocca.","en":"\n\n---------------------------------\n\nThe old guard stares at you with eyes of disbelief gratitude.\n\n'Thank you', exhale from your mouth."},
+    
+
+
 }
+
+
 
 """
 selected_language = "it"

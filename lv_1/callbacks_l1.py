@@ -183,26 +183,26 @@ def pick_up_key3():
 def combat_06():
     """Combattere imp in 06"""
     i.show_text(map_l1.s06.description + "\n\n---------------------------------"
-                                       + "\n\nVita del nemico: {} ".format(pg.l1_imp.PV)
+                                       + "\n\n" + interface_translations["enemy_life"][i.lang] + " {} ".format(pg.l1_imp.PV)
                                        + "\n\n---------------------------------"              
-                                         "\n\nL'Imp si avventa con voracità famelica in cerca della tua vita")
+                                       + callbacks_translations["l1_06combat"][i.lang])
     cs.combat(pg.PG, pg.l1_imp,5,6)
 
 
 def dialog_25_combat():
     """Parlare con guardia in 25"""
     i.show_text(map_l1.s25.description + "\n\n---------------------------------"
-                                       + "\n\nVita del nemico: {} ".format(pg.l1_oldguard.PV)
+                                       + "\n\n" + interface_translations["enemy_life"][i.lang] + " {} ".format(pg.l1_oldguard.PV)
                                        + "\n\n---------------------------------"              
-                                         "\n\n'QUESTO NON E' UN POSTO PER GIROVAGARE' \n\nil vecchio si alza e agita un bastone verso di te.")
+                                       + callbacks_translations["l1_25combat"][i.lang])
     cs.combat(pg.PG, pg.l1_oldguard, 24, 25)
 
 def combat_34():
     """Combattere imp in 34"""
     i.show_text(map_l1.s34.description + "\n\n---------------------------------"
-                                       + "\n\nVita del nemico: {} ".format(pg.l1_undead.PV)
+                                       + "\n\n" + interface_translations["enemy_life"][i.lang] + " {} ".format(pg.l1_undead.PV)
                                        + "\n\n---------------------------------"              
-                                         "\n\nIl non morto ti attacca per scopartti nel culo")
+                                       + callbacks_translations["l1_34combat"][i.lang])
     cs.combat(pg.PG, pg.l1_undead,24,34)
 
 ############################################DIALOGHI####################################################################
@@ -210,24 +210,24 @@ def combat_34():
 
 def dialog_25_start():
     """Parlare con guardia in 25"""
-    i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\n'CHI SIETE!?' grida la guardia, con voce ferma.")
+    i.show_text(map_l1.s25.description + callbacks_translations["l1_25dialog-1"][i.lang])
     i.create_buttons(d.s25_dialog_0())
 
 
 def dialog_25_1():
     """Parlare con guardia in 25"""
-    i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\n'Neanche io...' sussurra la vecchia guardia, con voce rassegnata.\n'Che vuoi!?' esclama con follia.")
+    i.show_text(map_l1.s25.description + callbacks_translations["l1_25dialog-2"][i.lang])
     i.create_buttons(d.s25_dialog_1())
 
 
 def dialog_25_2():
     """Parlare con guardia in 25"""
-    i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\nLa vecchia guardia scoppia a ridere.\n'Non c'è via d'uscita! Questo posto è sigillato da un'antica magia'.\n'Prendi questa chiave, forse tornerà più utile a te che a me.'\n\n---------------------------------\n\nTi porge la chiave.")
+    i.show_text(map_l1.s25.description + callbacks_translations["l1_25dialog-3"][i.lang])
     i.create_buttons(d.s25_dialog_2())
 
 
 def dialog_25_kill():
     """Parlare con guardia in 25"""
     pg.l1_oldguard.PV = 0
-    i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nLa vecchia guardia ti scruta con occhi di incredula gratitudine.\n\n'Grazie', esala dalla bocca.")
+    i.show_text(map_l1.s25.description + callbacks_translations["l1_25dialog-4"][i.lang])
     i.create_buttons(a.s25_actions())
