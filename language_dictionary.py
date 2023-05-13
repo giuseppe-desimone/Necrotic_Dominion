@@ -1,4 +1,4 @@
-"""v0.12"""
+"""v0.13"""
 
 interface_translations = {# add arcane lang??
         "interface_life":       { "en": "Life",                         "it":"Vita" },
