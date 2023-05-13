@@ -1,5 +1,6 @@
 """v0.13"""
 
+from interactions import menu as m
 from interface import *
 from lv_1 import callbacks_l1 as c
 from lv_1 import map_l1
@@ -30,8 +31,8 @@ def combat(pgplayer, pgenemy, previous_room, current_room):
 def combat_actions(previous_room, current_room):
     if p.PV <= 0:
         actions = [
-            {"text": interface_translations["new_game"][i.lang], "callback": i.new_play},
-            {"text": interface_translations["quit_game"][i.lang], "callback": i.end_game}
+            {"text": interface_translations["new_game"][i.lang], "callback": m.new_play},
+            {"text": interface_translations["quit_game"][i.lang], "callback": m.end_game}
         ]
     else:
         actions = [

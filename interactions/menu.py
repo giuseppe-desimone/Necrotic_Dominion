@@ -3,8 +3,6 @@ import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from interface import *
-from language_dictionary import *
 from lv_2.map_l2 import *
 from lv_1 import callbacks_l1 as c
 
