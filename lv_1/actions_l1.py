@@ -20,7 +20,7 @@ def s04_actions():
         actions = [
             {"text":  actions_translations["go-east"][i.lang], "callback": c.go_05},
             {"text":  actions_translations["go-west"][i.lang], "callback": c.go_03},
-            {"text":  actions_translations["l1-04_l1-14"][i.lang], "callback": c.go_14}
+            {"text":  actions_translations["l1_04-14"][i.lang], "callback": c.go_14}
         ]
     else:
         actions = [
@@ -54,12 +54,12 @@ def s06_actions():
                 ]
     else:
         actions = []
-        actions.append({"text": actions_translations["l1_06-05"], "callback": c.go_05})
+        actions.append({"text": actions_translations["l1_06-05"][i.lang], "callback": c.go_05})
         
         if c.v06a is False:
-                actions.append({"text": actions_translations["06pickup"], "callback": c.pick_up_key3})
+                actions.append({"text": actions_translations["06pickup"][i.lang], "callback": c.pick_up_key3})
         if c.v06 is False:
-                actions.append({"text": actions_translations["06drink"], "callback": c.drink_06})
+                actions.append({"text": actions_translations["06drink"][i.lang], "callback": c.drink_06})
 
     return actions
 
@@ -67,8 +67,8 @@ def s06_actions():
 def s14_actions():
     """Restituisce le azioni possibili nella stanza 1,4."""
     actions = [
-        {"text": actions_translations["l1_14-04"], "callback": c.go_04},
-        {"text": actions_translations["l1_14-24"], "callback": c.go_24}
+        {"text": actions_translations["l1_14-04"][i.lang], "callback": c.go_04},
+        {"text": actions_translations["l1_14-24"][i.lang], "callback": c.go_24}
 
     ]
     return actions
@@ -79,21 +79,21 @@ def s24_actions():
     if c.v06a is True:
         if c.v24 is False:
             actions = [
-                {"text": actions_translations["l1_24-14"], "callback": c.go_14},
-                {"text": actions_translations["open-door-south"], "callback": c.open_door_24},
-                {"text": actions_translations["open-door-east"], "callback": c.go_25}
+                {"text": actions_translations["l1_24-14"][i.lang], "callback": c.go_14},
+                {"text": actions_translations["open-door-south"][i.lang], "callback": c.open_door_24},
+                {"text": actions_translations["open-door-east"][i.lang], "callback": c.go_25}
             ]
         else:
             actions = [
-                {"text": actions_translations["l1_24-14"], "callback": c.go_14},
-                {"text": actions_translations["enter-door-south"], "callback": c.go_34},
-                {"text": actions_translations["open-door-east"], "callback": c.go_25}
+                {"text": actions_translations["l1_24-14"][i.lang], "callback": c.go_14},
+                {"text": actions_translations["enter-door-south"][i.lang], "callback": c.go_34},
+                {"text": actions_translations["open-door-east"][i.lang], "callback": c.go_25}
             ]
     else:
         actions = [
-            {"text": actions_translations["l1_24-14"], "callback": c.go_14},
-            {"text": actions_translations["open-door-south"], "callback": c.open_door_nokey_24},
-            {"text": actions_translations["open-door-east"], "callback": c.go_25}
+            {"text": actions_translations["l1_24-14"][i.lang], "callback": c.go_14},
+            {"text": actions_translations["open-door-south"][i.lang], "callback": c.open_door_nokey_24},
+            {"text": actions_translations["open-door-east"][i.lang], "callback": c.go_25}
         ]
     return actions
 
@@ -101,18 +101,18 @@ def s24_actions():
 def s25_actions():
     """Restituisce le azioni possibili nella stanza 2,5."""
     actions = [
-        {"text": actions_translations["l1_25-24"], "callback": c.go_24},
+        {"text": actions_translations["l1_25-24"][i.lang], "callback": c.go_24},
     ]
     if c.v25 is True:
         if pg.l1_oldguard.PV > 0:
-            actions.append({"text": actions_translations["25kill"], "callback": c.dialog_25_kill})
+            actions.append({"text": actions_translations["25kill"][i.lang], "callback": c.dialog_25_kill})
     else:
         if pg.l1_oldguard.PV > 0:
            
-            actions.append({"text": actions_translations["25speak"], "callback": c.dialog_25_start})
-            actions.append({"text": actions_translations["25attack"], "callback": c.dialog_25_combat})
+            actions.append({"text": actions_translations["25dialog"][i.lang], "callback": c.dialog_25_start})
+            actions.append({"text": actions_translations["25attack"][i.lang], "callback": c.dialog_25_combat})
         else:
-            actions.append({"text": actions_translations["25inspect"], "callback": c.pick_up_key2})
+            actions.append({"text": actions_translations["25inspect"][i.lang], "callback": c.pick_up_key2})
     return actions
 
 
@@ -120,13 +120,13 @@ def s34_actions():
     """Restituisce le azioni possibili nella stanza 1,4."""
     if pg.l1_undead.PV > 0:
         actions = [
-            {"text": actions_translations["34attack"], "callback": c.combat_34},
+            {"text": actions_translations["34attack"][i.lang], "callback": c.combat_34},
             # {"text": "Vai ad ovest verso la stanza vuota", "callback": c.go_05}
         ]
     else:
         actions = [
-            {"text": actions_translations["upstairs"], "callback": level_2},
-            {"text": actions_translations["go-back"], "callback": c.go_24}
+            {"text": actions_translations["upstairs"][i.lang], "callback": level_2},
+            {"text": actions_translations["go-back"][i.lang], "callback": c.go_24}
         ]
 
     return actions

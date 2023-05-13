@@ -43,10 +43,10 @@ def go_06():
     """Muove il giocatore nella stanza 0,6."""
     i.image_wand("./media/img_lv1/06")
     if pg.l1_imp.PV > 0:
-        i.show_text(map_l1.s06.description+ "\n\n---------------------------------\n\nMentre osservi la fontana con occhi curiosi, un'entità malvagia e ripugnante si innalza in volo.\nDai suoi occhi percepisci una volontà mortale.")
+        i.show_text(map_l1.s06.description+ callbacks_translations["l1_st06fight"][i.lang])
         i.create_buttons(a.s06_actions())
     else: 
-        i.show_text(map_l1.s06.description+ "\n\n---------------------------------\n\nUna massa nera, putrescente e informe giace dov'era un tempo l'imp.")
+        i.show_text(map_l1.s06.description+ callbacks_translations["l1_rs06fight"][i.lang])
         i.create_buttons(a.s06_actions())
 
 
@@ -69,20 +69,20 @@ def go_25():
     if v25 is True:
         if pg.l1_oldguard.PV > 0:
             i.image_wand("./media/img_lv1/25r")
-            i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\nLa guardia se ne sta a terra, su quello che sembra un letto fatto di paglia, e sembra dormire.")
+            i.show_text(map_l1.s25.description + callbacks_translations["l1_25sleep"][i.lang])
             i.create_buttons(a.s25_actions())
         else:
             i.image_wand("./media/img_lv1/25r")
-            i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nla guardia giace a terra, in una pozza di sangue.")
+            i.show_text(map_l1.s25.description + callbacks_translations["l1_25dead-taken"][i.lang])
             i.create_buttons(a.s25_actions())
     else:
         i.image_wand("./media/img_lv1/25")
         if pg.l1_oldguard.PV > 0:
-            i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nC'è una vecchia guardia poggiata al tavolo, si gira e ti osserva con occhi spalancati.")
+            i.show_text(map_l1.s25.description + callbacks_translations["l1_25encounter"][i.lang])
             i.create_buttons(a.s25_actions())
         else:
             i.image_wand("./media/img_lv1/25r")
-            i.show_text(map_l1.s25.description +"\n\n---------------------------------\n\nla guardia giace a terra, in una pozza di sangue. Sembra che abbia con se degli oggetti.")
+            i.show_text(map_l1.s25.description + callbacks_translations["l1_25dead-items"][i.lang])
             i.create_buttons(a.s25_actions())
 
 
@@ -90,10 +90,10 @@ def go_34():
     """Muove il giocatore nella stanza 3,4."""
     if pg.l1_undead.PV > 0:
         i.image_wand("./media/img_lv1/34")
-        i.show_text(map_l1.s34.description +"\n\n---------------------------------\n\nNon morto bruttto")
+        i.show_text(map_l1.s34.description + callbacks_translations["l1_34fight"][i.lang])
     else:
         i.image_wand("./media/img_lv1/34r")
-        i.show_text(map_l1.s34.description +"\n\n---------------------------------\n\nNon morto ma morto")
+        i.show_text(map_l1.s34.description + callbacks_translations["l1_34dead"][i.lang])
     
     i.create_buttons(a.s34_actions())
 
@@ -105,7 +105,7 @@ def drink_06():
     global v06
     v06 = True
     pg.edit_stats('M', 2)
-    i.show_text(map_l1.s06.description +"\n\n---------------------------------\n\nSenti la forte energia di centinaia di anime che ti permea. (Man. +2)")
+    i.show_text(map_l1.s06.description + callbacks_translations["l1_r06drink"][i.lang])
     i.create_buttons(a.s06_actions())
 
 
@@ -114,7 +114,7 @@ def open_chest_with_key():
     pg.PG.inventory.remove("chiave")
     pg.PG.inventory.append("spada")
     pg.edit_stats('F', 2)
-    i.show_text(map_l1.s03.description +"\n\n---------------------------------\n\nHai recuperato una spada d'acciaio di squisita fattura. (For. +2)")
+    i.show_text(map_l1.s03.description + callbacks_translations["l1_03sword"][i.lang])
     i.create_buttons(a.s03_actions())
 
 
@@ -123,15 +123,15 @@ def open_door_05():
     if 'chiave2' in pg.PG.inventory:
         v05 = True
         pg.PG.inventory.remove('chiave2')
-        i.show_text(map_l1.s05.description +"\n\n---------------------------------\n\nHai aperto la porta.")
+        i.show_text(map_l1.s05.description + callbacks_translations["l1_nokey"][i.lang])
         i.create_buttons(a.s05_actions())
     else:
-        i.show_text(map_l1.s05.description +"\n\n---------------------------------\n\nNon hai la chiave.")
+        i.show_text(map_l1.s05.description + callbacks_translations["l1_nokey"][i.lang])
         i.create_buttons(a.s05_actions())
 
 
 def open_door_nokey_24():
-    i.show_text(map_l1.s24.description + "\n\n---------------------------------\n\nNon hai la chiave.")
+    i.show_text(map_l1.s24.description + callbacks_translations["l1_nokey"][i.lang])
     i.create_buttons(a.s24_actions())
 
 def open_door_24():
@@ -139,16 +139,16 @@ def open_door_24():
     if 'chiave3' in pg.PG.inventory:
         v24 = True
         pg.PG.inventory.remove('chiave3')
-        i.show_text(map_l1.s24.description +"\n\n---------------------------------\n\nHai aperto la porta.")
+        i.show_text(map_l1.s24.description + callbacks_translations["l1_nokey"][i.lang])
         i.create_buttons(a.s24_actions())
     else:
-        i.show_text(map_l1.s24.description +"\n\n---------------------------------\n\nNon hai la chiave.")
+        i.show_text(map_l1.s24.description + callbacks_translations["l1_nokey"][i.lang])
         i.create_buttons(a.s24_actions())
 
 def pick_up_key():
     """Raccoglie la chiave."""
     pg.PG.inventory.append("chiave")
-    i.show_text(map_l1.s04.description + "\n\n---------------------------------\n\nHai raccolto la chiave.")
+    i.show_text(map_l1.s04.description + callbacks_translations["l1_pickupkey"][i.lang])
     i.create_buttons(a.s04_actions())
 
 
@@ -159,10 +159,10 @@ def pick_up_key2():
     i.image_wand("./media/img_lv1/25r")
     pg.PG.inventory.append("chiave2")
     if pg.l1_oldguard.PV <= 0:
-        i.show_text(map_l1.s25.description + "\n\n---------------------------------\n\nHai raccolto la chiave dal cadavere a terra.")
+        i.show_text(map_l1.s25.description + callbacks_translations["l1_pickupkeydead"][i.lang])
     else:
         i.show_text(
-            map_l1.s25.description + "\n\n---------------------------------\n\nHai raccolto la chiave.\n\n---------------------------------\n\nLa guardia si sdraia a terra, su quello che sembra un letto fatto di paglia, \ne cerca di addormentarsi.")
+            map_l1.s25.description +  callbacks_translations["l1_pickupkey"][i.lang] + callbacks_translations["l1_25gosleep"][i.lang] )
     i.create_buttons(a.s25_actions())
 
 
@@ -172,7 +172,7 @@ def pick_up_key3():
     v06a = True
     i.image_wand("./media/img_lv1/06")
     pg.PG.inventory.append("chiave3")
-    i.show_text(map_l1.s06.description + "\n\n---------------------------------\n\nHai raccolto la chiave dell'imp")
+    i.show_text(map_l1.s06.description + callbacks_translations["l1_pickupkeyimp"][i.lang])
     i.create_buttons(a.s06_actions())
 
 

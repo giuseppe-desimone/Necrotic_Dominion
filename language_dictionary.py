@@ -77,6 +77,25 @@ actions_translations = {
     "34attack":             {"it": "Attacca lo zombie",                                 "en": "Attack the zombie"},
 }
 
+callbacks_translations = {
+    "l1_st06fight" : {"it":"\n\n---------------------------------\n\nMentre osservi la fontana con occhi curiosi, un'entità malvagia e ripugnante si innalza in volo.\nDai suoi occhi percepisci una volontà mortale.","en":"\n\n---------------------------------\n\nAs you observe the fountain with curious eyes, an evil and repulsive entity soars into flight.\nFrom his eyes you perceive a deadly will."},
+    "l1_rs06fight" : {"it":"\n\n---------------------------------\n\nUna massa nera, putrescente e informe giace dov'era un tempo l'imp.", "en":"\n\n---------------------------------\n\nA black, rotting, shapeless mass lies where was once the imp."},
+    "l1_25sleep" : {"it":"\n\n---------------------------------\n\nLa guardia se ne sta a terra, su quello che sembra un letto fatto di paglia, e sembra dormire.","en":"\n\n---------------------------------\n\nThe guard is on the ground, come on what looks like a bed made of straw, and seems to sleep."},
+    "l1_25dead-taken" : {"it":"\n\n---------------------------------\n\nla guardia giace a terra, in una pozza di sangue.","en":"\n\n---------------------------------\n\nThe guard is lying on the ground in a puddle of blood."},
+    "l1_25encounter" : {"it":"\n\n---------------------------------\n\nC'è una vecchia guardia poggiata al tavolo, si gira e ti osserva con occhi spalancati.","en":"\n\n---------------------------------\n\nThere is an old guard leaning over the table, turns and looks at you with eyes wide open."},
+    "l1_25dead-items" : {"it":"\n\n---------------------------------\n\nla guardia giace a terra, in una pozza di sangue. Sembra che abbia con se degli oggetti.","en":"\n\n---------------------------------\n\nThe guard is lying on the ground in a puddle blood. Looks like he's carrying items."},
+    "l1_34fight" : {"it":"\n\n---------------------------------\n\nAperta la porta un'immondo fetore di putrefazione colpisce i tuoi sensi, e poi incredulo osservi le orbite vuote un cadavere mentre lui, con movimenti rotti, avanza inesorabile verso di te.","en":"\n\n---------------------------------\n\nUpon opening the door, a foul stench of decay assaults your senses, and then you incredulously observe the empty eye sockets of a corpse as it, with jerky movements, advances inexorably towards you."},
+    "l1_34dead" : {"it":"\n\n---------------------------------\n\nQualsiasi forza muovesse il cadavere sembra ora svanita, giace, con la mandibola dislocata in una smorfia che sembra ringraziarti del dono della pace eterna.","en":"\n\n---------------------------------\n\nWhatever force moved the corpse now seems to have vanished, it lies with its jaw dislocated in a grimace that seems to thank you for the gift of eternal peace."},
+    "l1_03sword" : {"it":"\n\n---------------------------------\n\nHai recuperato una spada d'acciaio di squisita fattura. (For. +2)","en":"\n\n---------------------------------\n\nYou have recovered an exquisite steel sword invoice.(Str. +2)"},
+    "l1_dooropen" : {"it":"\n\n---------------------------------\n\nHai aperto la porta.","en":"\n\n---------------------------------\n\nYou open the door."},
+    "l1_nokey" : {"it":"\n\n---------------------------------\n\nNon hai la chiave.","en":"\n\n---------------------------------\n\nYou doesn't have the key."},
+    "l1_pickupkey" : {"it":"\n\n---------------------------------\n\nHai raccolto la chiave.","en":"\n\n---------------------------------\n\nYou pick up the key."},
+    "l1_pickupkeyimp" : {"it":"\n\n---------------------------------\n\nHai raccolto la chiave dell'imp.","en":"\n\n---------------------------------\n\nYou pick up the imp's key."},
+    "l1_pickupkeydead" : {"it":"\n\n---------------------------------\n\nHai raccolto la chiave dal cadavere.","en":"\n\n---------------------------------\n\nYou pick up the key from the dead body."},
+    "l1_25gosleep" : {"it":"\n\n---------------------------------\n\nLa guardia si sdraia a terra, su quello che sembra un letto fatto di paglia, \ne cerca di addormentarsi.","en":"\n\n---------------------------------\n\nThe guard lies down on the ground, on what it looks like a bed made of straw,\nand trying to fall asleep."},
+    "l1_r06drink" : {"it":"\n\n---------------------------------\n\nSenti la forte energia di centinaia di anime che ti permea. (Mana +2)","en":"\n\n---------------------------------\n\nYou feel the strenght of hundreds souls infused within you. (Mana +2)"},
+}
+
 """
 selected_language = "it"
 str = translations["interface_strenght"][selected_language]
