@@ -35,6 +35,13 @@ oldcombat_translations = {
     "attack_done" : {"it":"\n\nColpo Sferrato, hai tolto ", "en":"\n\nStriked blow, you inflicted "},
 }
 
+olddialog_transaltions = {
+    "l1_25dont-reply":{"it":"Non rispondere","en":"Do not reply"},
+    "l1_25dialog0":{"it":"'Non ricordo come sono finito qui'","en":"'I don't remember how I ended here'"},
+    "l1_25dialog1":{"it":"'Come esco da qui?'","en":"'How do I go out form this place?'"},
+    "l1_25dialog2":{"it":"Prendi la chiave","en":"Take the key"},
+}
+
 level_translations = {
         "l1_03":                {"en":"In the heart of the castle lies \nthe armory, a vast chamber with \nstone walls adornedwith ancient \ncrests and dusty shields.\n\nOnce the guardian of thousands of weapons and armor, now the \ntowering shelves and armory \ncabinets remain empty and silent.\n\nAn indescribable sadness lingers \nin the air, only interrupted by \nthe sight of a chest in a \ncorner.",
                                  "it":"Nel cuore del castello si trova \nl’armeria, una vasta stanza dalle pareti in pietra ornate da \nantichi stemmi impolverati. \n\nUna volta custode di migliaia di \narmi e armature, ora le grandi \nmensole e gli armadi dell’armeria \nrimangono vuoti e silenziosi. \n\nUn’indicibile tristezza si respira nell’aria, interrotta solo dalla \nvista di una cassapanca in un \nangolo."},
