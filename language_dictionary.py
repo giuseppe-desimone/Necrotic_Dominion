@@ -1,4 +1,5 @@
 """v0.13"""
+########################################################################################################################
 
 interface_translations = {# add arcane lang??
         "interface_life":       { "en": "Life",                         "it":"Vita" },
@@ -28,8 +29,8 @@ interface_translations = {# add arcane lang??
 }
 
 oldcombat_translations = {
-    "missile_hit" : {"it":"\n\nLa tua energia travolge l'avversario, arrecandogli \n", "en":"\n\nYour energy overwhelms the \nopponent, causing "},
-    "parry_miss" : {"it":"\n\nHai tentato di parare, ma hai subito \n", "en":"\n\nYou attempted to parry, but you took \n"},
+    "missile_hit" : {"it":"\n\nLa tua energia travolge \nl'avversario, arrecandogli \n", "en":"\n\nYour energy overwhelms the \nopponent, causing "},
+    "parry_miss" : {"it":"\n\nHai tentato di parare, ma hai \nsubito ", "en":"\n\nYou attempted to parry, but you took \n"},
     "parry_succ" : {"it":"\n\nHai parato!", "en":"\n\nYou parry!"},
     "attack_received" : {"it":"\n\nVieni Attaccato, hai subito \n", "en":"\n\nYou're Attacked, you've got \n"},
     "attack_done" : {"it":"\n\nColpo Sferrato, hai tolto \n", "en":"\n\nStriked blow, you inflicted \n"},
@@ -103,22 +104,22 @@ actions_translations = {
 }
 
 callbacks_translations = {
-    "l1_st06fight" :        {"it":"\n\n---------------------------------\n\nMentre osservi la fontana con occhi curiosi, un'entità malvagia e ripugnante si innalza in volo.\nDai suoi occhi percepisci una volontà mortale.",
+    "l1_st06fight" :        {"it":"\n\n---------------------------------\n\nMentre osservi la fontana con \nocchi curiosi, un'entità malvagia \ne ripugnante si innalza in volo.\nDai suoi occhi percepisci una \nvolontà mortale.",
                              "en":"\n\n---------------------------------\n\nAs you observe the fountain with curious eyes, an evil and repulsive entity soars into flight.\nFrom his eyes you perceive a deadly will."},
-    "l1_rs06fight" :        {"it":"\n\n---------------------------------\n\nUna massa nera, putrescente e informe giace dov'era un tempo l'imp.",
+    "l1_rs06fight" :        {"it":"\n\n---------------------------------\n\nUna massa nera, putrescente e \ninforme giace dov'era un tempo \nl'imp.",
                              "en":"\n\n---------------------------------\n\nA black, rotting, shapeless mass \nlies where was once the imp."},
     "l1_25sleep" :          {"it":"\n\n---------------------------------\n\nLa guardia se ne sta a terra, su quello che sembra un letto fatto di paglia, e sembra dormire.",
                              "en":"\n\n---------------------------------\n\nThe guard is on the ground, down on what looks like a bed made \nof straw, and seems to sleep."},
     "l1_25dead-taken" :     {"it":"\n\n---------------------------------\n\nla guardia giace a terra, in una pozza di sangue.",
                              "en":"\n\n---------------------------------\n\nThe guard lays on the ground in a puddle of blood."},
-    "l1_25encounter" :      {"it":"\n\n---------------------------------\n\nC'è una vecchia guardia poggiata al tavolo, si gira e ti osserva con occhi spalancati.",
+    "l1_25encounter" :      {"it":"\n\n---------------------------------\n\nC'è una vecchia guardia poggiata \nal tavolo, si gira e ti osserva \ncon occhi spalancati.",
                              "en":"\n\n---------------------------------\n\nThere is an old guard leaning over the table, turns and looks at you with eyes wide open."},
-    "l1_25dead-items" :     {"it":"\n\n---------------------------------\n\nla guardia giace a terra, in una pozza di sangue. Sembra che abbia con se degli oggetti.",
+    "l1_25dead-items" :     {"it":"\n\n---------------------------------\n\nla guardia giace a terra, in una \npozza di sangue. Sembra che abbia con se degli oggetti.",
                              "en":"\n\n---------------------------------\n\nThe guard is lying on the ground \nin a puddle blood. Looks like he's carrying items."},
-    "l1_34fight" :          {"it":"\n\n---------------------------------\n\nAperta la porta un'immondo fetore di putrefazione colpisce i tuoi sensi, e poi incredulo osservi le orbite vuote un cadavere mentre lui, con movimenti rotti, avanza inesorabile verso di te.",
-                             "en":"\n\n---------------------------------\n\nUpon opening the door, a foul stench of decay assaults your senses, and then you incredulously observe the empty eye sockets of a corpse as it, with jerky movements, advances inexorably towards you."},
-    "l1_34dead" :           {"it":"\n\n---------------------------------\n\nQualsiasi forza muovesse il cadavere sembra ora svanita, giace, con la mandibola dislocata in una smorfia che sembra ringraziarti del dono della pace eterna.",
-                             "en":"\n\n---------------------------------\n\nWhatever force moved the corpse now seems to have vanished, it lies with its jaw dislocated in a grimace that seems to thank you for the gift of eternal peace."},
+    "l1_34fight" :          {"it":"\n\n---------------------------------\n\nAperta la porta un'immondo fetore di putrefazione colpisce i tuoi \nsensi, e poi incredulo osservi le \norbite vuote un cadavere mentre \nlui, con movimenti innaturali, \navanza inesorabile verso te.",
+                             "en":"\n\n---------------------------------\n\nUpon opening the door, a foul \nstench of decay assaults your \nsenses, and then you incredulously \nobserve the empty eye sockets \nof a corpse as it, with jerky \nmovements, advances inexorably \ntowards you."},
+    "l1_34dead" :           {"it":"\n\n---------------------------------\n\nQualsiasi forza muovesse il \ncadavere sembra ora svanita, \ngiace, con la mandibola dislocata \nin una smorfia che sembra \nringraziarti del dono della \npace eterna.",
+                             "en":"\n\n---------------------------------\n\nWhatever force moved the corpse \nnow seems to have vanished, \nit lies with its jaw dislocated in \na grimace that seems to thank you \nfor the gift of eternal peace."},
     "l1_03sword" :          {"it":"\n\n---------------------------------\n\nHai recuperato una spada d'acciaio di squisita fattura. (For. +2)",
                              "en":"\n\n---------------------------------\n\nYou have recovered an exquisite \nsteel sword invoice.(Str. +2)"},
     "l1_dooropen" :         {"it":"\n\n---------------------------------\n\nHai aperto la porta.",
@@ -133,24 +134,24 @@ callbacks_translations = {
                              "en":"\n\n---------------------------------\n\nYou pick up the imp's key."},
     "l1_pickupkeydead" :    {"it":"\n\n---------------------------------\n\nHai raccolto la chiave dal cadavere.",
                              "en":"\n\n---------------------------------\n\nYou pick up the key from the dead body."},
-    "l1_25gosleep" :        {"it":"\n\n---------------------------------\n\nLa guardia si sdraia a terra, su quello che sembra un letto fatto di paglia, \ne cerca di addormentarsi.",
+    "l1_25gosleep" :        {"it":"\n\n---------------------------------\n\nLa guardia si sdraia a terra, \nsu quello che sembra un letto fatto di paglia, e cerca di \naddormentarsi.",
                              "en":"\n\n---------------------------------\n\nThe guard lies down on the ground, on what it looks like a bed made \nof straw, and trying to fall \nasleep."},
-    "l1_r06drink" :         {"it":"\n\n---------------------------------\n\nSenti la forte energia di centinaia di anime che ti permea. \n(Mana +2)",
+    "l1_r06drink" :         {"it":"\n\n---------------------------------\n\nSenti la forte energia di \ncentinaia di anime che ti permea. \n(Mana +2)",
                              "en":"\n\n---------------------------------\n\nYou feel the strenght of hundreds souls infused within you. \n(Mana +2)"},
 
-    "l1_06combat":{"it":"\n\nL'Imp si avventa con voracità \nfamelica in cerca della tua vita",
-                   "en":"\n\nThe Imp rushes with ravenous \nvoracity for your life"},
-    "l1_25combat":{"it":"\n\n'QUESTO NON E' UN POSTO PER GIROVAGARE' \n\nil vecchio si alza e agita un bastone verso di te.",
-                   "en":"\n\n'THIS IS NO PLACE FOR A WALK' \n\nthe old man stands up and waves a wooden rod at you."},
-    "l1_34combat":{"it":"\n\nCon un'improvvisa forza sovrumana il cadavere si avventa su di te",
-                   "en":"\n\nWith sudden superhuman strength the corpse pounces on you."},
+    "l1_06combat":          {"it":"\n\nL'Imp si avventa con voracità \nfamelica in cerca della tua vita",
+                             "en":"\n\nThe Imp rushes with ravenous \nvoracity for your life"},
+    "l1_25combat":          {"it":"\n\n'QUESTO NON E' UN POSTO PER \nGIROVAGARE' \n\nil vecchio si alza e agita un \nbastone verso di te.",
+                             "en":"\n\n'THIS IS NO PLACE FOR A WALK' \n\nthe old man stands up and waves a wooden rod at you."},
+    "l1_34combat":          {"it":"\n\nCon un'improvvisa forza sovrumana il cadavere si avventa su di te",
+                             "en":"\n\nWith sudden superhuman strength \nthe corpse pounces on you."},
 
-    "l1_25dialog-1":{"it":"\n\n---------------------------------\n\n'CHI SIETE!?' grida la guardia, con voce ferma.",
+    "l1_25dialog-1":{"it":"\n\n---------------------------------\n\n'CHI SIETE!?' grida la guardia, \ncon voce ferma.",
                      "en":"\n\n---------------------------------\n\n'WHO ARE YOU!?' shouts the guard, in a firm voice."},
-    "l1_25dialog-2":{"it":"\n\n---------------------------------\n\n'Neanche io...' sussurra la vecchia guardia, con voce rassegnata.\n'Che vuoi!?' esclama con follia.",
+    "l1_25dialog-2":{"it":"\n\n---------------------------------\n\n'Neanche io...' sussurra la \nvecchia guardia, con voce \nrassegnata.\n'Che vuoi!?' esclama con follia.",
                      "en":"\n\n---------------------------------\n\n'Me neither...' the old guard \nwhispers, with a resigned voice.\n'What do you want!?' he exclaims \nmadly."},
-    "l1_25dialog-3":{"it":"\n\n---------------------------------\n\nLa vecchia guardia scoppia a ridere.\n'Non c'è via d'uscita! Questo posto è sigillato da un'antica magia'.\n'Prendi questa chiave, forse tornerà più utile a te che a me.'\n\n---------------------------------\n\nTi porge la chiave.",
+    "l1_25dialog-3":{"it":"\n\n---------------------------------\n\nLa vecchia guardia scoppia a \nridere.\n'Non c'è via d'uscita! Questo \nposto è sigillato da un'antica \nmagia'.\n'Prendi questa chiave, forse \ntornerà più utile a te che a me.'\n\n---------------------------------\n\nTi porge la chiave.",
                      "en":"\n\n---------------------------------\n\nThe old guard bursts into \nlaughter. \n'There is no way out! This place \nis sealed by an ancient magic'.\n'Take this key, perhaps it will be of more use to you than to me.'\n\n---------------------------------\n\nHe hands you the key."},
-    "l1_25dialog-4":{"it":"\n\n---------------------------------\n\nLa vecchia guardia ti scruta con occhi di incredula gratitudine.\n\n'Grazie', esala dalla bocca.",
+    "l1_25dialog-4":{"it":"\n\n---------------------------------\n\nLa vecchia guardia ti scruta con \nocchi di incredula gratitudine.\n\n'Grazie', esala dalla bocca.",
                      "en":"\n\n---------------------------------\n\nThe old guard stares at you with \neyes of disbelief gratitude.\n\n'Thank you', he exhales from his \nmouth."},
 }

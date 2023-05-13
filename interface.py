@@ -1,5 +1,5 @@
 """v0.13"""
-
+########################################################################################################################
 import os
 import sys
 
@@ -32,12 +32,12 @@ class InterfaceSingleton(metaclass=InterfaceMeta):
         # creazione della finestra di gioco
         self.window = tk.Tk()
         self.window.configure(bg='black')
-        self.window.title("Necrotic Dominion v0.12")
+        self.window.title("Necrotic Dominion v0.13")
         self.window.geometry("800x600")
         self.window.resizable(False, False)
         # self.window.iconbitmap("./media/ic.ico")
 
-        self.lang = "en"
+        self.lang = "it"
 
         # Create the textbox over the image
         self.text_box_over_image = tk.Text(self.window, bg='black', fg='white', state=tk.DISABLED, highlightthickness=0,

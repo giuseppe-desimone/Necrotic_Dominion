@@ -1,9 +1,9 @@
 --- 0.13: 	1)aggiungere stringa di trattini dinamicamente
-	    	2)sistemare tutte le traduzioni
+---	    	2)sistemare tutte le traduzioni
 0.14: 	Aggiungere destrezza e migliorare combat system 
 0.15: 	Costruttore di stanze
 0.16: 	Riguardare inventario
 0.17: 	Sistema di dialogo
-0.18:    
+0.18:   
 0.:		Continuare la costruzione del livello 2
 0.: 	refactoring lv 1 (?)

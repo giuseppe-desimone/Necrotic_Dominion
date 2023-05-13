@@ -1,8 +1,5 @@
 """v0.13"""
-
-import os
-import sys
-
+########################################################################################################################
 from interface import *
 
 from interactions import combat_system as cs
@@ -139,7 +136,7 @@ def open_door_24():
     if 'chiave3' in pg.PG.inventory:
         v24 = True
         pg.PG.inventory.remove('chiave3')
-        i.show_text(map_l1.s24.description + callbacks_translations["l1_nokey"][i.lang])
+        i.show_text(map_l1.s24.description + callbacks_translations["l1_key"][i.lang])
         i.create_buttons(a.s24_actions())
     else:
         i.show_text(map_l1.s24.description + callbacks_translations["l1_nokey"][i.lang])

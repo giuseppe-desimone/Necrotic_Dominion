@@ -1,7 +1,6 @@
 """v0.13"""
-
+########################################################################################################################
 from lv_1 import callbacks_l1 as c
-from language_dictionary import *
 from interface import *
 
 def s25_dialog_0():
