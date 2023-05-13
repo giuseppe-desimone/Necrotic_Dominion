@@ -37,10 +37,10 @@ def combat_actions(previous_room, current_room):
         actions = [
             {"text": interface_translations["flee"][i.lang], "callback": lambda: getattr(c, f"go_{previous_room:02d}")()},
             {"text": interface_translations["parry"][i.lang], "callback": lambda: para(previous_room, current_room)},
-            {"text": interface_translations["arcane_missile"][i.lang], "callback": lambda: attacca(previous_room, current_room)}
+            {"text": interface_translations["attack"][i.lang], "callback": lambda: attacca(previous_room, current_room)}
         ]
         if p.PM >= 2:
-            actions.append({"text": interface_translations["quit_game"][i.lang], "callback": lambda: invoke_missile(previous_room, current_room)})
+            actions.append({"text": interface_translations["arcane_missile"][i.lang], "callback": lambda: invoke_missile(previous_room, current_room)})
     return actions
 
 

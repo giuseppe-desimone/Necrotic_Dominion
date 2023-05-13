@@ -35,13 +35,13 @@ def s05_actions():
     """Restituisce le azioni possibili nella stanza 0,5."""
     if c.v05 is True:
         actions = [
-            {"text": actions_translations["go-west"][i.lang], "callback": c.go_04},
+            {"text": actions_translations["l1_05-04"][i.lang], "callback": c.go_04},
             {"text": actions_translations["l1_05-06"][i.lang], "callback": c.go_06}
         ]
     else:
         actions = [
             {"text": actions_translations["l1_05-04"][i.lang], "callback": c.go_04},
-            {"text": actions_translations["open-door"][i.lang], "callback": c.open_door_05}
+            {"text": actions_translations["open-door-east"][i.lang], "callback": c.open_door_05}
         ]
     return actions
 

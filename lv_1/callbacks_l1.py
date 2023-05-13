@@ -123,7 +123,7 @@ def open_door_05():
     if 'chiave2' in pg.PG.inventory:
         v05 = True
         pg.PG.inventory.remove('chiave2')
-        i.show_text(map_l1.s05.description + callbacks_translations["l1_nokey"][i.lang])
+        i.show_text(map_l1.s05.description + callbacks_translations["l1_key"][i.lang])
         i.create_buttons(a.s05_actions())
     else:
         i.show_text(map_l1.s05.description + callbacks_translations["l1_nokey"][i.lang])
@@ -131,7 +131,7 @@ def open_door_05():
 
 
 def open_door_nokey_24():
-    i.show_text(map_l1.s24.description + callbacks_translations["l1_nokey"][i.lang])
+    i.show_text(map_l1.s24.description + callbacks_translations["l1_key"][i.lang])
     i.create_buttons(a.s24_actions())
 
 def open_door_24():
