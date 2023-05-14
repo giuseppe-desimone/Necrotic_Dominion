@@ -128,7 +128,7 @@ def open_door_05():
 
 
 def open_door_nokey_24():
-    i.show_text(map_l1.s24.description + callbacks_translations["l1_key"][i.lang])
+    i.show_text(map_l1.s24.description + callbacks_translations["l1_nokey"][i.lang])
     i.create_buttons(a.s24_actions())
 
 def open_door_24():
