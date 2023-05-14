@@ -5,7 +5,7 @@
 							colto alla sprovvista il nemico attacca per primo
 							"Furtività" azione gestita da destrezza (prove contrapposte il nemico sembra non accorgersi di te)
 							aggiunta ladro come classe che inizia con più destrezza
-							Level System
+							Level System (abilità e possibilità di scegliere quali abilità usare in combattimento)
 0.15: 	Costruttore di stanze
 0.16: 	Riguardare inventario
 0.17: 	Sistema di dialogo
