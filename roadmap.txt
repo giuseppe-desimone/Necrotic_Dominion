@@ -1,6 +1,11 @@
 --- 0.13: 	1)aggiungere stringa di trattini dinamicamente
 ---	    	2)sistemare tutte le traduzioni
-0.14: 	Aggiungere destrezza e migliorare combat system 
+0.14: 	Aggiungere destrezza e migliorare combat system{
+						        "Scappa" gestito dalla destrezza contrapposto all'avversario
+							colto alla sprovvista il nemico attacca per primo
+							"Furtività" azione gestita da destrezza (prove contrapposte il nemico sembra non accorgersi di te)
+							aggiunta ladro come classe che inizia con più destrezza
+							Level System
 0.15: 	Costruttore di stanze
 0.16: 	Riguardare inventario
 0.17: 	Sistema di dialogo
